@@ -23,7 +23,9 @@ int main(int argc, char* argv[]){
     // Allocate vector to store numbers read in file.
     std::vector<int> numbers;
     numbers.reserve(1000001);
-    numbers.push_back(-1);
+    
+    // Add useless value to make padding.
+    numbers.push_back(0);
 
     // Read numbers from file.
     int number;
@@ -32,18 +34,21 @@ int main(int argc, char* argv[]){
         numbers.push_back(number);
     }
 
-    // 배열에 저장된 데이터 출력
+    // Print data from read file.
     std::cout << "Numbers read from file:\n";
     for (size_t i = 1; i < numbers.size(); ++i) {
         std::cout << numbers[i] << " ";
-        if ((i + 1) % 10 == 0) { // 줄바꿈 (10개씩 출력)
+        if ((i + 1) % 10 == 0) {
+            // Print 10 element and make new line.
             std::cout << "\n";
         }
     }
-    std::cout << "\n";
+    // std::cout << "\nnum size: " << numbers.size() << std::endl;
 
+    // Close input file.
     inFile.close();
 
+    // Pursue insertion sort.
     for(size_t j = 2; j < numbers.size(); j++){
         int key = numbers[j];
 
@@ -56,20 +61,19 @@ int main(int argc, char* argv[]){
         numbers[i + 1] = key;
     }
 
-    // 결과를 새로운 파일에 저장
+    // Delete first element in vector utilized for padding.
+    numbers.erase(numbers.begin());
+
+    // Save result into new file.
     std::ofstream outFile(outputFile);
     if (!outFile) {
         std::cerr << "Error: Could not open output file: " << outputFile << std::endl;
         return 1;
     }
 
-    if (!outFile) {
-        std::cerr << "Error: Could not create output file.\n";
-        return 1;
-    }
-
     for (const auto& num : numbers) {
-        outFile << num << "\n"; // 한 줄에 하나의 숫자 저장
+        // Save number in each line.
+        outFile << num << "\n";
     }
 
     outFile.close();

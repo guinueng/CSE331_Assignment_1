@@ -2,7 +2,6 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include <climits>
 
 void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     int tmp = arr[l_pos];
@@ -57,9 +56,7 @@ void heap_sort(std::vector<int>& arr){
         swap(arr, 1, i);
         max_heapify(arr, 1, i);
     }
-
 }
-
 
 int main(int argc, char* argv[]){
     // If input on argument is not proper, send it to error handler.

@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <climits>
 
 void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     int tmp = arr[l_pos];
@@ -9,51 +10,126 @@ void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     arr[r_pos] = tmp;
 }
 
-void downheap(std::vector<int>& arr, size_t idx){
-    size_t l_pos = 2 * idx;
-    size_t r_pos = 2 * idx + 1;
+// void downheap(std::vector<int>& arr, size_t idx){
+//     size_t l_pos = 2 * idx;
+//     size_t r_pos = 2 * idx + 1;
 
-    if(l_pos > (arr.size() - 1) || r_pos > (arr.size() - 1)){
-        return;
-    }
+//     if(l_pos > (arr.size() - 1) || r_pos > (arr.size() - 1)){
+//         return;
+//     }
 
-    bool l = false;
-    if(arr[l_pos] <= arr[r_pos]){
-        l = true;
-    }
+//     bool l = false;
+//     if(arr[l_pos] <= arr[r_pos]){
+//         l = true;
+//     }
 
-    if(l){
-        if(arr[idx] > arr[l_pos]){
-            swap(arr, l_pos, idx);
-            // int tmp = arr[l_pos];
-            // arr[l_pos] = arr[idx];
-            // arr[idx] = tmp;
-        }
+//     if(l){
+//         if(arr[idx] > arr[l_pos]){
+//             swap(arr, l_pos, idx);
+//             // int tmp = arr[l_pos];
+//             // arr[l_pos] = arr[idx];
+//             // arr[idx] = tmp;
+//         }
+//     }
+//     else{
+//         if(arr[idx] > arr[r_pos]){
+//             swap(arr, idx, r_pos);
+//             // int tmp = arr[r_pos];
+//             // arr[r_pos] = arr[idx];
+//             // arr[idx] = tmp;
+//         }
+//     }
+
+//     downheap(arr, l_pos);
+//     downheap(arr, r_pos);
+// }
+
+void max_heapify(std::vector<int>& arr, size_t idx, size_t len){
+    size_t left = idx * 2;
+    size_t right = idx * 2 + 1;
+    size_t largest = idx;
+
+    // std::cout << "info: "  << left << " " << right << " "  << largest << " " << arr.size() << std::endl;
+
+    if(left < len && arr.at(left) > arr.at(idx)){
+        largest = left;
     }
     else{
-        if(arr[idx] > arr[r_pos]){
-            swap(arr, idx, r_pos);
-            // int tmp = arr[r_pos];
-            // arr[r_pos] = arr[idx];
-            // arr[idx] = tmp;
-        }
+        largest = idx;
     }
 
-    downheap(arr, l_pos);
-    downheap(arr, r_pos);
+    if(right < len && arr.at(right) > arr.at(largest)){
+        largest = right;
+    }
+
+    // std::cout << "largest: " << largest <<std::endl;
+
+    if(largest != idx){
+        swap(arr, idx, largest);
+        max_heapify(arr, largest, len);
+    }
+
+    // for(auto i : arr){
+    //     std::cout << i << " ";
+    // }
+    // std::cout << "\n";
 }
 
-void heap_sort_init(std::vector<int>& arr){
-    downheap(arr, 1);
+void max_heap(std::vector<int>& arr, size_t idx){
+    for(size_t i = (idx / 2); i > 0; i--){
+        max_heapify(arr, i, arr.size());
+    }
+
+    // size_t l_pos = 2 * idx;
+    // size_t r_pos = 2 * idx + 1;
+
+    // if(l_pos > (arr.size() - 1) || r_pos > (arr.size() - 1)){
+    //     return;
+    // }
+
+    // bool l = false;
+    // if(arr[l_pos] <= arr[r_pos]){
+    //     l = true;
+    // }
+
+    // if(l){
+    //     if(arr[idx] > arr[l_pos]){
+    //         swap(arr, l_pos, idx);
+    //         // int tmp = arr[l_pos];
+    //         // arr[l_pos] = arr[idx];
+    //         // arr[idx] = tmp;
+    //     }
+    // }
+    // else{
+    //     if(arr[idx] > arr[r_pos]){
+    //         swap(arr, idx, r_pos);
+    //         // int tmp = arr[r_pos];
+    //         // arr[r_pos] = arr[idx];
+    //         // arr[idx] = tmp;
+    //     }
+    // }
+
+    // downheap(arr, l_pos);
+    // downheap(arr, r_pos);
 }
 
-int pop_rm_front(std::vector<int>& arr){
-    int pop_num = arr.at(0);
-    arr.at(1) = arr.at((arr.size() - 1));
-    arr.pop_back();
+void heap_sort(std::vector<int>& arr){
+    // downheap(arr, 1);
+    max_heap(arr, arr.size() - 1);
+    for(size_t i = (arr.size() - 1); i > 0 ; i--){
+        swap(arr, 1, i);
+        max_heapify(arr, 1, i);
+    }
 
-    return pop_num;
 }
+
+// int pop_rm_front(std::vector<int>& arr){
+//     int pop_num = arr.at(0);
+//     arr.at(1) = arr.at((arr.size() - 1));
+//     arr.pop_back();
+
+//     return pop_num;
+// }
 
 int main(int argc, char* argv[]){
     // If input on argument is not proper, send it to error handler.
@@ -101,7 +177,7 @@ int main(int argc, char* argv[]){
     inFile.close();
 
     // Pursue merge sort.
-    heap_sort_init(numbers);
+    heap_sort(numbers);
 
     // Delete first element in vector utilized for padding.
     numbers.erase(numbers.begin());

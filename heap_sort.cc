@@ -3,7 +3,13 @@
 #include <vector>
 #include <string>
 
-void heap_sort(std::vector<int>& arr, size_t idx){
+void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
+    int tmp = arr[l_pos];
+    arr[l_pos] = arr[r_pos];
+    arr[r_pos] = tmp;
+}
+
+void downheap(std::vector<int>& arr, size_t idx){
     size_t l_pos = 2 * idx;
     size_t r_pos = 2 * idx + 1;
 
@@ -18,25 +24,35 @@ void heap_sort(std::vector<int>& arr, size_t idx){
 
     if(l){
         if(arr[idx] > arr[l_pos]){
-            int tmp = arr[l_pos];
-            arr[l_pos] = arr[idx];
-            arr[idx] = tmp;
+            swap(arr, l_pos, idx);
+            // int tmp = arr[l_pos];
+            // arr[l_pos] = arr[idx];
+            // arr[idx] = tmp;
         }
     }
     else{
         if(arr[idx] > arr[r_pos]){
-            int tmp = arr[r_pos];
-            arr[r_pos] = arr[idx];
-            arr[idx] = tmp;
+            swap(arr, idx, r_pos);
+            // int tmp = arr[r_pos];
+            // arr[r_pos] = arr[idx];
+            // arr[idx] = tmp;
         }
     }
 
-    heap_sort(arr, l_pos);
-    heap_sort(arr, r_pos);
+    downheap(arr, l_pos);
+    downheap(arr, r_pos);
 }
 
 void heap_sort_init(std::vector<int>& arr){
-    heap_sort(arr, 1);
+    downheap(arr, 1);
+}
+
+int pop_rm_front(std::vector<int>& arr){
+    int pop_num = arr.at(0);
+    arr.at(1) = arr.at((arr.size() - 1));
+    arr.pop_back();
+
+    return pop_num;
 }
 
 int main(int argc, char* argv[]){

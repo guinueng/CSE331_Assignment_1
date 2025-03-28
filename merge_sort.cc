@@ -2,10 +2,9 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <chrono>
 
 void merge_sort(std::vector<int>& arr, size_t low, size_t mid, size_t high){
-    // std::cout << "low: " << low << "mid: " << mid << "high: " << high << std::endl;
-    // size_t size = high - low + 1;
     size_t l_len = mid - low + 1;
     size_t r_len = high - mid;
 
@@ -39,29 +38,9 @@ void merge_sort(std::vector<int>& arr, size_t low, size_t mid, size_t high){
         right.push_back(arr[mid + i + 1]);
     }
 
-    // std::cout << "Before: " << std::endl;
-    // for (size_t i : left){
-    //     std::cout << i << ", ";
-    // }
-    // std::cout << std::endl;
-    // for (size_t i : right){
-    //     std::cout << i << ", ";
-    // }
-    // std::cout << std::endl;
-
     // Sort it make sure to pursue next step.
     merge_sort(left, 1, l_len / 2, l_len);
     merge_sort(right, 1, r_len / 2, r_len);
-
-    // std::cout << "After: " << std::endl;
-    // for (size_t i : left){
-    //     std::cout << i << ", ";
-    // }
-    // std::cout << std::endl;
-    // for (size_t i : right){
-    //     std::cout << i << ", ";
-    // }
-    // std::cout << std::endl;
 
     size_t l_pos = 1;
     size_t r_pos = 1;
@@ -78,7 +57,6 @@ void merge_sort(std::vector<int>& arr, size_t low, size_t mid, size_t high){
 }
 
 void merge_sort_init(std::vector<int>& arr){
-    // std::cout << "\nsize:" << arr.size() << std::endl;
     merge_sort(arr, 1, (arr.size() - 1)/2, arr.size()-1);
 }
 
@@ -88,6 +66,9 @@ int main(int argc, char* argv[]){
         std::cerr << "Usage: " << argv[0] << " <input_file> <output_file>" << std::endl;
         return 1;
     }
+
+    // Start measuring sort_func exec time.
+    auto start = std::chrono::high_resolution_clock::now();
 
     // Save input and output file name in string.
     std::string outputFile = argv[argc - 1];
@@ -114,21 +95,27 @@ int main(int argc, char* argv[]){
     }
 
     // Print data from read file.
-    std::cout << "Numbers read from file:\n";
-    for (size_t i = 1; i < numbers.size(); ++i) {
-        std::cout << numbers[i] << " ";
-        if ((i + 1) % 10 == 0) {
-            // Print 10 element and make new line.
-            std::cout << "\n";
-        }
-    }
+    // std::cout << "Numbers read from file:\n";
+    // for (size_t i = 1; i < numbers.size(); ++i) {
+    //     std::cout << numbers[i] << " ";
+    //     if ((i + 1) % 10 == 0) {
+    //         // Print 10 element and make new line.
+    //         std::cout << "\n";
+    //     }
+    // }
     // std::cout << "\nnum size: " << numbers.size() << std::endl;
 
     // Close input file.
     inFile.close();
 
+    // Start measuring sort_func exec time.
+    auto sort_start = std::chrono::high_resolution_clock::now();
+
     // Pursue merge sort.
     merge_sort_init(numbers);
+
+    // End measuring sort_func finish time
+    auto sort_end = std::chrono::high_resolution_clock::now();
 
     // Delete first element in vector utilized for padding.
     numbers.erase(numbers.begin());
@@ -147,6 +134,14 @@ int main(int argc, char* argv[]){
 
     outFile.close();
     std::cout << "Processed data has been written to 'output.txt'.\n";
+
+    // End measuring finish time
+    auto end = std::chrono::high_resolution_clock::now();
+
+    // Calculate elapsed time in milliseconds
+    auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    auto sort_elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(sort_end - sort_start).count();
+    std::cout << "Elapsed time: " << elapsed << " ms\n" << "Sorting time: " << sort_elapsed << " ms\n" << std::endl;
 
     return 0;
 }

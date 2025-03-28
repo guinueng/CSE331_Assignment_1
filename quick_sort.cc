@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <chrono>
 
 void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     int tmp = arr[l_pos];
@@ -63,6 +64,9 @@ int main(int argc, char* argv[]){
         return 1;
     }
 
+    // Start measuring sort_func exec time.
+    auto start = std::chrono::high_resolution_clock::now();
+
     // Save input and output file name in string.
     std::string outputFile = argv[argc - 1];
     std::string inputFile = argv[argc - 2];
@@ -85,20 +89,26 @@ int main(int argc, char* argv[]){
     }
 
     // Print data from read file.
-    std::cout << "Numbers read from file:\n";
-    for (size_t i = 0; i < numbers.size(); ++i) {
-        std::cout << numbers[i] << " ";
-        if ((i + 1) % 10 == 0) {
-            // Print 10 element and make new line.
-            std::cout << "\n";
-        }
-    }
+    // std::cout << "Numbers read from file:\n";
+    // for (size_t i = 0; i < numbers.size(); ++i) {
+    //     std::cout << numbers[i] << " ";
+    //     if ((i + 1) % 10 == 0) {
+    //         // Print 10 element and make new line.
+    //         std::cout << "\n";
+    //     }
+    // }
 
     // Close input file.
     inFile.close();
 
+    // Start measuring sort_func exec time.
+    auto sort_start = std::chrono::high_resolution_clock::now();
+
     // Pursue merge sort.
     quick_sort(numbers);
+
+    // End measuring sort_func finish time
+    auto sort_end = std::chrono::high_resolution_clock::now();
 
     // Save result into new file.
     std::ofstream outFile(outputFile);
@@ -114,6 +124,14 @@ int main(int argc, char* argv[]){
 
     outFile.close();
     std::cout << "Processed data has been written to 'output.txt'.\n";
+
+    // End measuring finish time
+    auto end = std::chrono::high_resolution_clock::now();
+
+    // Calculate elapsed time in milliseconds
+    auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    auto sort_elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(sort_end - sort_start).count();
+    std::cout << "Elapsed time: " << elapsed << " ms\n" << "Sorting time: " << sort_elapsed << " ms\n" << std::endl;
 
     return 0;
 }

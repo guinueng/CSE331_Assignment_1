@@ -3,6 +3,12 @@ SANFLAGS = -fsanitize=address
 CXXFLAGS += -Wall -O2 -std=c++23 -g $(SANFLAGS)
 LDFLAGS += $(SANFLAGS)
 
+# LDFLAGS1 = $(LDFLAGS) + -Wl -stack_size 0x10000000
+
+# quick_sort: LDFLAGS += -Wl,-stack_size,0x10000000 # 256MB
+
+# quick_sort: LDFLAGS += -Wl,-z,stack-size=0x200000000
+
 # 개별 실행 파일 이름 정의
 TARGETS = merge_sort heap_sort insertion_sort bubble_sort selection_sort quick_sort auto_eval
 

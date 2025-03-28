@@ -16,10 +16,11 @@ void quick_sort(std::vector<int>& arr){
         return;
     }
 
-    int pivot = arr.at(back);
+    // 1. Select pivot at the last point of arr.
+    int pivot = arr.at(back); // Pivot can be any value. In assignment document, test it and add it.
 
-    // std::cout << "pivot: " << pivot << std::endl;
-
+    // 2. Move integer into 3 sub-array which is designed to
+    //    store less than / equal / higher than pivot.
     std::vector<int> S, E, H;
     while(!arr.empty()){
         int i = arr.at(back);
@@ -36,9 +37,12 @@ void quick_sort(std::vector<int>& arr){
         back--;
     }
 
+    // 3. Since arr E is already sorted(due to it is same as
+    //    pivot), so we sort S and H arr.
     quick_sort(S);
     quick_sort(H);
 
+    // 4. Finally, combine sorted result into original array.
     for(auto i: S){
         arr.push_back(i);
     }

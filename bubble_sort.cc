@@ -12,23 +12,21 @@ void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
 void bubble_sort(std::vector<int>& arr, size_t len){
     bool sorted = false;
 
+    // Base case. If length is smaller than 1, it contains it self,
+    // thus it is already sorted state. Therefore, return.
     if(len < 2){
         return;
     }
 
-    // std::cout << len << std::endl;
-
+    // Pursue compare i and next elem and if condition satisfies(arr[i]
+    // > arr[i + 1]) execute swap operation.
     for(size_t i = 1; i < len; i++){
         if(arr.at(i) > arr.at(i + 1)){
             swap(arr, i, i+ 1);
-            // sorted = true;
         }
     }
 
-    if(sorted){
-        return;
-    }
-
+    // Recursively do process until first one left.
     bubble_sort(arr, len - 1);
 }
 

@@ -8,15 +8,19 @@ void merge_sort(std::vector<int>& arr, size_t low, size_t mid, size_t high){
     size_t l_len = mid - low + 1;
     size_t r_len = high - mid;
 
+    // std::cout << "low: " << low << " mid: " << mid << " high: " << high << " l_len: " << l_len << " r_len: " << r_len << std::endl;
+
     if(low == high){ // Base case 1: Only one elem came.
         return;
     }
 
     if(low + 1 == high){ // Base case 2: Two elem came.
         if(arr[low] <= arr[high]){
+            // std::cout << 1 << std::endl;
             return;
         }
         else{
+            // std::cout << 2 << std::endl;
             int tmp = arr[high];
             arr[high] = arr[low];
             arr[low] = tmp;
@@ -45,7 +49,16 @@ void merge_sort(std::vector<int>& arr, size_t low, size_t mid, size_t high){
     size_t l_pos = 1;
     size_t r_pos = 1;
     for(size_t i = low; i <= high; i++){
-        if((left[l_pos] <= right[r_pos] && (l_pos < left.size())) || !(r_pos < right.size())){
+        // std::cout << "l: " << l_pos << " r: " << r_pos << std::endl;
+        if(!(r_pos < right.size())){
+            arr[i] = left[l_pos];
+            l_pos++;
+        }
+        else if(!(l_pos < left.size())){
+            arr[i] = right[r_pos];
+            r_pos++;
+        }
+        else if((left[l_pos] <= right[r_pos])){
             arr[i] = left[l_pos];
             l_pos++;
         }
@@ -57,7 +70,7 @@ void merge_sort(std::vector<int>& arr, size_t low, size_t mid, size_t high){
 }
 
 void merge_sort_init(std::vector<int>& arr){
-    merge_sort(arr, 1, (arr.size() - 1)/2, arr.size()-1);
+    merge_sort(arr, 1, (arr.size() - 1)/2, arr.size() - 1);
 }
 
 int main(int argc, char* argv[]){

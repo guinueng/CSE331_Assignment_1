@@ -30,10 +30,14 @@ void selection_sort(std::vector<int>& arr, size_t idx){
         }
     }
 
-    swap(arr, idx, smallest);
+    if(idx != smallest){
+        swap(arr, idx, smallest);
+    }
 
     // Recursively do process until first one left.
-    selection_sort(arr, idx + 1);
+    if((idx + 1) <= arr.size()){
+        selection_sort(arr, idx + 1);
+    }
 }
 
 int main(int argc, char* argv[]){

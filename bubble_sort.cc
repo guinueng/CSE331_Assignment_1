@@ -10,8 +10,6 @@ void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
 }
 
 void bubble_sort(std::vector<int>& arr, size_t len){
-    bool sorted = false;
-
     // Base case. If length is smaller than 1, it contains it self,
     // thus it is already sorted state. Therefore, return.
     if(len < 2){

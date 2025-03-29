@@ -65,7 +65,9 @@ int main() {
     // List of programs and their arguments
     std::vector<std::string> progs = {
         // "./comb_sort",
-        "./tournament_sort",
+        // "./tournament_sort",
+        // "./intro_sort",
+        "./cocktail_shaker_sort.cc"
     };
 
     std::vector<std::pair<std::string, std::string>> args = {

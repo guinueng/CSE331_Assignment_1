@@ -3,9 +3,6 @@
 #include <vector>
 #include <string>
 #include <chrono>
-#include <cmath>
-
-#define SIZE_THRESHOLD 16
 
 void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     int tmp = arr[l_pos];
@@ -13,84 +10,40 @@ void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     arr[r_pos] = tmp;
 }
 
-void max_heapify(std::vector<int>& arr, size_t idx, size_t len) {
-    size_t left = idx * 2 + 1; // 수정: 배열 인덱스는 0 기반
-    size_t right = idx * 2 + 2;
-    size_t largest = idx;
-
-    if (left < len && arr[left] > arr[largest]) {
-        largest = left;
+void cocktail_shaker_sort(std::vector<int>& arr, size_t len){
+    // Base case. If length is smaller than 1, it contains it self,
+    // thus it is already sorted state. Therefore, return.
+    if(len < 2){
+        return;
     }
 
-    if (right < len && arr[right] > arr[largest]) {
-        largest = right;
-    }
+    // size_t idx = 1;
+    size_t max = len;
+    size_t min = 1;
+    bool ascend = true;
 
-    if (largest != idx) {
-        swap(arr, idx, largest);
-        max_heapify(arr, largest, len);
-    }
-}
-
-void max_heap(std::vector<int>& arr, size_t f, size_t len) {
-    for (size_t i = (len / 2); i-- > f;) { // 수정: i-- 조건 변경
-        max_heapify(arr, i, len);
-    }
-}
-
-void heap_sort(std::vector<int>& arr, size_t f, size_t b) {
-    max_heap(arr, f, b);
-
-    for (size_t i = b; i-- > f;) { // 수정: i-- 조건 변경
-        swap(arr, f, i);
-        max_heapify(arr, f, i);
-    }
-}
-
-void insertion_sort(std::vector<int>& arr, size_t f, size_t b) {
-    for (size_t j = f + 1; j < b; j++) { // 수정: j는 f+1부터 시작
-        int key = arr[j];
-        size_t i = j;
-
-        while (i > f && arr[i - 1] > key) { // 수정: 범위 조건 변경
-            arr[i] = arr[i - 1];
-            i--;
+    // Pursue compare i and next elem and if condition satisfies(arr[i]
+    // > arr[i + 1]) execute swap operation.
+    while(max > 1){
+        if(ascend){
+            for(size_t i = min; i < max; i++){
+                if(arr.at(i) > arr.at(i + 1)){
+                    swap(arr, i, i+ 1);
+                }
+            }
+            ascend = false;
+            max--;
         }
-
-        arr[i] = key;
-    }
-}
-
-int partition(std::vector<int>& arr, int low, int high) {
-    int pivot = arr[high];
-    int i = low - 1;
-
-    for (int j = low; j < high; j++) {
-        if (arr[j] <= pivot) {
-            i++;
-            std::swap(arr[i], arr[j]);
+        else{
+            for(size_t i = max; i > min; i--){
+                if(arr.at(i - 1) > arr.at(i)){
+                    swap(arr, i - 1, i);
+                }
+            }
+            ascend = true;
+            min++;
         }
     }
-    std::swap(arr[i + 1], arr[high]);
-    return i + 1;
-}
-
-void introsort_loop(std::vector<int>& arr, size_t f, size_t b, size_t depth_limit) {
-    while (b - f > SIZE_THRESHOLD) {
-        if (depth_limit == 0) {
-            heap_sort(arr, f, b);
-            return;
-        }
-        depth_limit--;
-        size_t p = partition(arr, f, b - 1); // 수정: 범위 전달 오류 수정
-        introsort_loop(arr, p + 1, b, depth_limit);
-        b = p;
-    }
-}
-
-void intro_sort(std::vector<int>& arr, size_t f, size_t b) {
-    introsort_loop(arr, f, b, 2 * static_cast<size_t>(log(b - f)));
-    insertion_sort(arr, f, b);
 }
 
 int main(int argc, char* argv[]){
@@ -116,7 +69,7 @@ int main(int argc, char* argv[]){
     // Allocate vector to store numbers read in file.
     std::vector<int> numbers;
     numbers.reserve(1000001);
-    
+
     // Add useless value to make padding.
     numbers.push_back(0);
 
@@ -134,7 +87,7 @@ int main(int argc, char* argv[]){
     auto sort_start = std::chrono::high_resolution_clock::now();
 
     // Pursue merge sort.
-    intro_sort(numbers, 1, numbers.size());
+    cocktail_shaker_sort(numbers, (numbers.size() - 1));
 
     // End measuring sort_func finish time
     auto sort_end = std::chrono::high_resolution_clock::now();

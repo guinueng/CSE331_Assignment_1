@@ -67,7 +67,7 @@ int main() {
         // "./comb_sort",
         // "./tournament_sort",
         // "./intro_sort",
-        "./cocktail_shaker_sort.cc"
+        "./cocktail_shaker_sort"
     };
 
     std::vector<std::pair<std::string, std::string>> args = {

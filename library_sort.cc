@@ -2,7 +2,9 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <climits>
 #include <chrono>
+#include <cmath>
 
 void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     int tmp = arr[l_pos];
@@ -10,61 +12,35 @@ void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     arr[r_pos] = tmp;
 }
 
-void rebalance(std::vector<int>& arr, size_t begin, size_t end){
-    size_t r = end;
-    size_t w = 2 * end;
+void rebalance(std::vector<int>& arr, size_t f, size_t b){
+    arr.resize(2 * arr.size());
 
-    while(r >= begin){
-        
+    while(b >= f){
+        arr[2 * b] = INT_MIN;
+        swap(arr, b, 2 * b);
+        b--;
     }
 }
 
-void max_heapify(std::vector<int>& arr, size_t idx, size_t len){
-    size_t left = idx * 2;
-    size_t right = idx * 2 + 1;
-    size_t largest = idx;
+void library_sort(std::vector<int>& arr){
+    size_t n = arr.size() - 1;
+    std::vector<int> sorted(2 * n, INT_MIN);
 
-    // 1. Check left child elem exist and it is bigger than root.
-    if(left < len && arr.at(left) > arr.at(idx)){
-        largest = left;
-    }
-    // else{
-    //     largest = idx;
-    // }
-
-    // 2. Check right child elem exist and it is bigger than bigger one btw
-    //    left and target idx.
-    if(right < len && arr.at(right) > arr.at(largest)){
-        largest = right;
+    size_t size = 2;
+    for(size_t i = 1; int(log(n - 1)); i++){
+        rebalance(sorted, 1, size / 2);
+        for(size_t j = size / 2; j <= size; j++){
+            size_t pos = bin_search(arr[j], sorted, size);
+            sorted[pos] = arr[j];
+        }
+        size *= 2;
     }
 
-    // 3. If bigger than target idx, swap it and pursue max_heapify again to
-    //    make sure swapped one fits in correct position or need to go up again.
-    if(largest != idx){
-        swap(arr, idx, largest);
-        max_heapify(arr, largest, len);
-    }
-}
-
-void max_heap(std::vector<int>& arr, size_t idx){
-    for(size_t i = (idx / 2); i > 0; i--){
-        // Since we just need to consider non-leaf nodes, idx is bound for
-        // (1, lower bound of (arr.size() / 2)).
-        max_heapify(arr, i, arr.size());
-    }
-}
-
-void heap_sort(std::vector<int>& arr){
-    // 1. Make max_heap tree.
-    max_heap(arr, arr.size() - 1);
-
-    // 2. Since root is sorted as maximum elem, swap it into last elem,
-    //    then, operate max_heapify again w/o swapped elem.
-    //    Then, 2nd max elem will come to root, and keep going to make
-    //    element sorted.
-    for(size_t i = (arr.size() - 1); i > 0 ; i--){
-        swap(arr, 1, i);
-        max_heapify(arr, 1, i);
+    size_t idx = 1;
+    for(auto i : sorted){
+        if(i != INT_MIN){
+            arr[idx++] = i;
+        }
     }
 }
 

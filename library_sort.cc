@@ -3,54 +3,68 @@
 #include <vector>
 #include <string>
 #include <chrono>
-#include <cassert>
-#include <cmath>
 
-
-#include <vector>
-#include <cmath>
-#include <algorithm>
-
-void swap(std::vector<int>& arr, size_t a, size_t b) {
-    std::swap(arr[a], arr[b]);
+void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
+    int tmp = arr[l_pos];
+    arr[l_pos] = arr[r_pos];
+    arr[r_pos] = tmp;
 }
 
-size_t max_tournament(std::vector<int>& arr, std::vector<int>& win, size_t len) {
-    size_t cur = 0;
-    size_t next = len;
-    while (len > 1) {
-        for (size_t i = 0; i + 1 < len; i += 2) {
-            size_t left = win[cur + i];
-            size_t right = win[cur + i + 1];
-            win[next++] = (arr[left] > arr[right]) ? left : right;
-        }
-        if (len % 2 == 1) {
-            win[next++] = win[cur + len - 1];
-        }
-        cur += len;
-        len = (len + 1) / 2;
+void rebalance(std::vector<int>& arr, size_t begin, size_t end){
+    size_t r = end;
+    size_t w = 2 * end;
+
+    while(r >= begin){
+        
     }
-    return next;
 }
 
-void tournament_sort(std::vector<int>& arr) {
-    if (arr.size() <= 1) return;
+void max_heapify(std::vector<int>& arr, size_t idx, size_t len){
+    size_t left = idx * 2;
+    size_t right = idx * 2 + 1;
+    size_t largest = idx;
 
-    const size_t padding = 1;
-    size_t n = arr.size() - padding; // Due to exist of padding, - 1.
-    size_t tree_size = 2 * (1 << static_cast<size_t>(ceil(log2(n))));
-    std::vector<int> win(tree_size, -1);
+    // 1. Check left child elem exist and it is bigger than root.
+    if(left < len && arr.at(left) > arr.at(idx)){
+        largest = left;
+    }
+    // else{
+    //     largest = idx;
+    // }
 
-    for (size_t i = arr.size() - 1; i >= padding; --i) {
-        for (size_t j = 0; j < n; ++j) 
-            win[j] = j + padding; 
+    // 2. Check right child elem exist and it is bigger than bigger one btw
+    //    left and target idx.
+    if(right < len && arr.at(right) > arr.at(largest)){
+        largest = right;
+    }
 
-        size_t next = max_tournament(arr, win, n);
-        size_t root_index = next - 1;
-        swap(arr, win[root_index], i);
+    // 3. If bigger than target idx, swap it and pursue max_heapify again to
+    //    make sure swapped one fits in correct position or need to go up again.
+    if(largest != idx){
+        swap(arr, idx, largest);
+        max_heapify(arr, largest, len);
+    }
+}
 
-        std::fill(win.begin() + n, win.end(), -1);
-        --n;
+void max_heap(std::vector<int>& arr, size_t idx){
+    for(size_t i = (idx / 2); i > 0; i--){
+        // Since we just need to consider non-leaf nodes, idx is bound for
+        // (1, lower bound of (arr.size() / 2)).
+        max_heapify(arr, i, arr.size());
+    }
+}
+
+void heap_sort(std::vector<int>& arr){
+    // 1. Make max_heap tree.
+    max_heap(arr, arr.size() - 1);
+
+    // 2. Since root is sorted as maximum elem, swap it into last elem,
+    //    then, operate max_heapify again w/o swapped elem.
+    //    Then, 2nd max elem will come to root, and keep going to make
+    //    element sorted.
+    for(size_t i = (arr.size() - 1); i > 0 ; i--){
+        swap(arr, 1, i);
+        max_heapify(arr, 1, i);
     }
 }
 
@@ -106,7 +120,7 @@ int main(int argc, char* argv[]){
     auto sort_start = std::chrono::high_resolution_clock::now();
 
     // Pursue merge sort.
-    tournament_sort(numbers);
+    heap_sort(numbers);
 
     // End measuring sort_func finish time
     auto sort_end = std::chrono::high_resolution_clock::now();

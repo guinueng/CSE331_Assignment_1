@@ -3,6 +3,8 @@
 #include <vector>
 #include <string>
 #include <chrono>
+#include <cmath>
+#include "insertion_sort.cc"
 
 void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     int tmp = arr[l_pos];
@@ -10,53 +12,36 @@ void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     arr[r_pos] = tmp;
 }
 
-void quick_sort(std::vector<int>& arr){
-    size_t back = arr.size() - 1;
+void insertion_sort(std::vector<int>& arr, size_t f, size_t b){
+    for(size_t j = f; j < b; j++){
+        int key = arr[j];
 
-    if(arr.size() < 2){
-        return;
-    }
-
-    // 1. Select pivot at the last point of arr.
-    int pivot = arr.at(back / 2); // Pivot can be any value. In assignment document, test it and add it.
-
-    // Pivot = back elem > can cause stack overflow. > need to increase stack
-
-    // 2. Move integer into 3 sub-array which is designed to
-    //    store less than / equal / higher than pivot.
-    std::vector<int> S, E, H;
-    while(!arr.empty()){
-        int i = arr.at(back);
-        if(i < pivot){
-            S.push_back(i);
+        size_t i = j - 1;
+        while(i > 0 && arr[i] > key){
+            arr[i + 1] = arr[i];
+            i--;
         }
-        else if(i > pivot){
-            H.push_back(i);
+
+        arr[i + 1] = key;
+    }
+}
+
+void introsort_loop(std::vector<int>& arr, size_t f, size_t b, size_t depth_limit){
+    while(b - f > size_threshold){
+        if(depth_limit == 0){
+            heap_sort(arr, f, b);
+            return;
         }
-        else{
-            E.push_back(i);
-        }
-        arr.pop_back();
-        back--;
+        depth_limit--;
+        p = partition ();
+        intro_sort(arr, p, b, depth_limit);
+        b = p;
     }
+}
 
-    // 3. Since arr E is already sorted(due to it is same as
-    //    pivot), so we sort S and H arr.
-    quick_sort(S);
-    quick_sort(H);
-
-    // 4. Finally, combine sorted result into original array.
-    for(auto i: S){
-        arr.push_back(i);
-    }
-
-    for(auto i: E){
-        arr.push_back(i);
-    }
-
-    for(auto i: H){
-        arr.push_back(i);
-    }
+void intro_sort(std::vector<int>& arr, size_t f, size_t b){
+    introsort_loop(arr, f, b, 2 * log(b - f));
+    insertion_sort(arr, f, b);
 }
 
 int main(int argc, char* argv[]){
@@ -82,6 +67,9 @@ int main(int argc, char* argv[]){
     // Allocate vector to store numbers read in file.
     std::vector<int> numbers;
     numbers.reserve(1000001);
+    
+    // Add useless value to make padding.
+    numbers.push_back(0);
 
     // Read numbers from file.
     int number;
@@ -90,6 +78,17 @@ int main(int argc, char* argv[]){
         numbers.push_back(number);
     }
 
+    // Print data from read file.
+    // std::cout << "Numbers read from file:\n";
+    // for (size_t i = 1; i < numbers.size(); ++i) {
+    //     std::cout << numbers[i] << " ";
+    //     if ((i + 1) % 10 == 0) {
+    //         // Print 10 element and make new line.
+    //         std::cout << "\n";
+    //     }
+    // }
+    // std::cout << "\nnum size: " << numbers.size() << std::endl;
+
     // Close input file.
     inFile.close();
 
@@ -97,10 +96,13 @@ int main(int argc, char* argv[]){
     auto sort_start = std::chrono::high_resolution_clock::now();
 
     // Pursue merge sort.
-    quick_sort(numbers);
+    heap_sort(numbers);
 
     // End measuring sort_func finish time
     auto sort_end = std::chrono::high_resolution_clock::now();
+
+    // Delete first element in vector utilized for padding.
+    numbers.erase(numbers.begin());
 
     // Save result into new file.
     std::ofstream outFile(outputFile);

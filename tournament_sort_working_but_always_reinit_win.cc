@@ -3,59 +3,49 @@
 #include <vector>
 #include <string>
 #include <chrono>
+#include <cassert>
+#include <cmath>
 
-void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
-    int tmp = arr[l_pos];
-    arr[l_pos] = arr[r_pos];
-    arr[r_pos] = tmp;
+void swap(std::vector<int>& arr, size_t a, size_t b) {
+    std::swap(arr[a], arr[b]);
 }
 
-void quick_sort(std::vector<int>& arr){
-    size_t back = arr.size() - 1;
-
-    if(arr.size() < 2){
-        return;
-    }
-
-    // 1. Select pivot at the last point of arr.
-    int pivot = arr.at(back / 2); // Pivot can be any value. In assignment document, test it and add it.
-
-    // Pivot = back elem > can cause stack overflow. > need to increase stack
-
-    // 2. Move integer into 3 sub-array which is designed to
-    //    store less than / equal / higher than pivot.
-    std::vector<int> S, E, H;
-    while(!arr.empty()){
-        int i = arr.at(back);
-        if(i < pivot){
-            S.push_back(i);
+size_t max_tournament(std::vector<int>& arr, std::vector<int>& win, size_t len) {
+    size_t cur = 0;
+    size_t next = len;
+    while (len > 1) {
+        for (size_t i = 0; i + 1 < len; i += 2) {
+            size_t left = win[cur + i];
+            size_t right = win[cur + i + 1];
+            win[next++] = (arr[left] > arr[right]) ? left : right;
         }
-        else if(i > pivot){
-            H.push_back(i);
+        if (len % 2 == 1) {
+            win[next++] = win[cur + len - 1];
         }
-        else{
-            E.push_back(i);
-        }
-        arr.pop_back();
-        back--;
+        cur += len;
+        len = (len + 1) / 2;
     }
+    return next;
+}
 
-    // 3. Since arr E is already sorted(due to it is same as
-    //    pivot), so we sort S and H arr.
-    quick_sort(S);
-    quick_sort(H);
+void tournament_sort(std::vector<int>& arr) {
+    if (arr.size() <= 1) return;
 
-    // 4. Finally, combine sorted result into original array.
-    for(auto i: S){
-        arr.push_back(i);
-    }
+    const size_t padding = 1;
+    size_t n = arr.size() - padding; // Due to exist of padding, - 1.
+    size_t tree_size = 2 * (1 << static_cast<size_t>(ceil(log2(n))));
+    std::vector<int> win(tree_size, -1);
 
-    for(auto i: E){
-        arr.push_back(i);
-    }
+    for (size_t i = arr.size() - 1; i >= padding; --i) {
+        for (size_t j = 0; j < n; ++j) 
+            win[j] = j + padding; 
 
-    for(auto i: H){
-        arr.push_back(i);
+        size_t next = max_tournament(arr, win, n);
+        size_t root_index = next - 1;
+        swap(arr, win[root_index], i);
+
+        std::fill(win.begin() + n, win.end(), -1);
+        --n;
     }
 }
 
@@ -82,6 +72,9 @@ int main(int argc, char* argv[]){
     // Allocate vector to store numbers read in file.
     std::vector<int> numbers;
     numbers.reserve(1000001);
+    
+    // Add useless value to make padding.
+    numbers.push_back(0);
 
     // Read numbers from file.
     int number;
@@ -90,6 +83,17 @@ int main(int argc, char* argv[]){
         numbers.push_back(number);
     }
 
+    // Print data from read file.
+    // std::cout << "Numbers read from file:\n";
+    // for (size_t i = 1; i < numbers.size(); ++i) {
+    //     std::cout << numbers[i] << " ";
+    //     if ((i + 1) % 10 == 0) {
+    //         // Print 10 element and make new line.
+    //         std::cout << "\n";
+    //     }
+    // }
+    // std::cout << "\nnum size: " << numbers.size() << std::endl;
+
     // Close input file.
     inFile.close();
 
@@ -97,10 +101,13 @@ int main(int argc, char* argv[]){
     auto sort_start = std::chrono::high_resolution_clock::now();
 
     // Pursue merge sort.
-    quick_sort(numbers);
+    tournament_sort(numbers);
 
     // End measuring sort_func finish time
     auto sort_end = std::chrono::high_resolution_clock::now();
+
+    // Delete first element in vector utilized for padding.
+    numbers.erase(numbers.begin());
 
     // Save result into new file.
     std::ofstream outFile(outputFile);

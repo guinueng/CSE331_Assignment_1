@@ -1,60 +1,90 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <string>
+#include <cmath>
 #include <chrono>
-#include <cassert>
-#include <cmath>
-
-
-#include <vector>
-#include <cmath>
-#include <algorithm>
+#include <climits>
 
 void swap(std::vector<int>& arr, size_t a, size_t b) {
-    std::swap(arr[a], arr[b]);
+    if (a >= arr.size() || b >= arr.size()) return;
+    if (a == b) return;
+    int temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
 }
 
-size_t max_tournament(std::vector<int>& arr, std::vector<int>& win, size_t len) {
-    size_t cur = 0;
-    size_t next = len;
-    while (len > 1) {
-        for (size_t i = 0; i + 1 < len; i += 2) {
-            size_t left = win[cur + i];
-            size_t right = win[cur + i + 1];
-            win[next++] = (arr[left] > arr[right]) ? left : right;
+size_t calculate_tree_size(size_t n) {
+    if (n == 0) return 0;
+    size_t next_pow2 = 1ULL << static_cast<size_t>(ceil(log2(n)));
+    return 2 * next_pow2 - 1;
+}
+
+void update_tree(std::vector<int>& arr, std::vector<int>& win, size_t idx, size_t tree_size) {
+    while (idx > 0) {
+        size_t parent = (idx - 1) / 2;
+        size_t left = 2 * parent + 1;
+        size_t right = 2 * parent + 2;
+
+        int left_val = (left < tree_size && win[left] != -1) ? arr[win[left]] : INT_MIN;
+        int right_val = (right < tree_size && win[right] != -1) ? arr[win[right]] : INT_MIN;
+
+        if (left_val > right_val) {
+            win[parent] = win[left];
+        } else {
+            win[parent] = (right_val != INT_MIN) ? win[right] : win[left];
         }
-        if (len % 2 == 1) {
-            win[next++] = win[cur + len - 1];
-        }
-        cur += len;
-        len = (len + 1) / 2;
+        idx = parent;
     }
-    return next;
 }
 
 void tournament_sort(std::vector<int>& arr) {
-    if (arr.size() <= 1) return;
+    const size_t n = arr.size();
+    if (n <= 1) return;
 
-    const size_t padding = 1;
-    size_t n = arr.size() - padding; // Due to exist of padding, - 1.
-    size_t tree_size = 2 * (1 << static_cast<size_t>(ceil(log2(n))));
+    const size_t tree_size = calculate_tree_size(n);
     std::vector<int> win(tree_size, -1);
 
-    for (size_t i = arr.size() - 1; i >= padding; --i) {
-        for (size_t j = 0; j < n; ++j) 
-            win[j] = j + padding; 
+    const size_t leaf_start = tree_size / 2;
+    for (size_t i = 0; i < n; ++i) {
+        win[leaf_start + i] = i;
+    }
 
-        size_t next = max_tournament(arr, win, n);
-        size_t root_index = next - 1;
-        swap(arr, win[root_index], i);
+    for (int i = static_cast<int>(leaf_start - 1); i >= 0; --i) {
+        size_t left = 2 * i + 1;
+        size_t right = 2 * i + 2;
 
-        std::fill(win.begin() + n, win.end(), -1);
-        --n;
+        int left_val = (left < tree_size && win[left] != -1) ? arr[win[left]] : INT_MIN;
+        int right_val = (right < tree_size && win[right] != -1) ? arr[win[right]] : INT_MIN;
+
+        if (left_val > right_val) {
+            win[i] = win[left];
+        } else {
+            win[i] = (right_val != INT_MIN) ? win[right] : win[left];
+        }
+    }
+
+    for (size_t i = n - 1; i > 0; --i) {
+        const size_t max_idx = win[0];
+        swap(arr, max_idx, i);
+
+        // 정렬된 위치(i)만 무효화
+        size_t invalidate_pos = leaf_start + i;
+        if (invalidate_pos < tree_size && invalidate_pos >= leaf_start && invalidate_pos < leaf_start + n) {
+            win[invalidate_pos] = -1;
+            update_tree(arr, win, invalidate_pos, tree_size);
+        }
+
+        // 변경된 최대값 위치 업데이트
+        if (max_idx < i) { // max_idx가 유효한 범위 내에 있는지 확인
+            size_t update_pos = leaf_start + max_idx;
+            if (update_pos < tree_size && update_pos >= leaf_start && update_pos < leaf_start + n) {
+                update_tree(arr, win, update_pos, tree_size);
+            }
+        }
     }
 }
 
-int main(int argc, char* argv[]){
+int main(int argc, char* argv[]) {
     // If input on argument is not proper, send it to error handler.
     if (argc != 3){
         std::cerr << "Usage: " << argv[0] << " <input_file> <output_file>" << std::endl;
@@ -77,9 +107,6 @@ int main(int argc, char* argv[]){
     // Allocate vector to store numbers read in file.
     std::vector<int> numbers;
     numbers.reserve(1000001);
-    
-    // Add useless value to make padding.
-    numbers.push_back(0);
 
     // Read numbers from file.
     int number;
@@ -87,17 +114,6 @@ int main(int argc, char* argv[]){
         // Add numbers in vector.
         numbers.push_back(number);
     }
-
-    // Print data from read file.
-    // std::cout << "Numbers read from file:\n";
-    // for (size_t i = 1; i < numbers.size(); ++i) {
-    //     std::cout << numbers[i] << " ";
-    //     if ((i + 1) % 10 == 0) {
-    //         // Print 10 element and make new line.
-    //         std::cout << "\n";
-    //     }
-    // }
-    // std::cout << "\nnum size: " << numbers.size() << std::endl;
 
     // Close input file.
     inFile.close();
@@ -110,9 +126,6 @@ int main(int argc, char* argv[]){
 
     // End measuring sort_func finish time
     auto sort_end = std::chrono::high_resolution_clock::now();
-
-    // Delete first element in vector utilized for padding.
-    numbers.erase(numbers.begin());
 
     // Save result into new file.
     std::ofstream outFile(outputFile);
@@ -138,4 +151,21 @@ int main(int argc, char* argv[]){
     std::cout << "Elapsed time: " << elapsed << " ms\n" << "Sorting time: " << sort_elapsed << " ms\n" << std::endl;
 
     return 0;
+    
+    // if (argc != 3) {
+    //     cerr << "Usage: " << argv[0] << " <input> <output>\n";
+    //     return 1;
+    // }
+
+    // vector<int> numbers;
+    // ifstream in(argv[1]);
+    // int num;
+    // while (in >> num) numbers.push_back(num);
+
+    // tournament_sort(numbers);
+
+    // ofstream out(argv[2]);
+    // for (auto n : numbers) out << n << "\n";
+
+    // return 0;
 }

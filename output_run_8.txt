@@ -1,0 +1,208 @@
+(.venv) guinueng@DESKTOP-G525C48:~/Intro_to_Algorithm/assignment_1$ ./auto_eval 
+Results from ./merge_sort w/ input file: input.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 0 ms
+Sorting time: 0 ms
+
+Results from ./merge_sortw/ input file: input.txtValid.
+------------------------------------
+Results from ./merge_sort w/ input file: unsorted_1k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 1 ms
+Sorting time: 0 ms
+
+Results from ./merge_sortw/ input file: unsorted_1k.txtValid.
+------------------------------------
+Results from ./merge_sort w/ input file: sorted_1k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 1 ms
+Sorting time: 0 ms
+
+Results from ./merge_sortw/ input file: sorted_1k.txtValid.
+------------------------------------
+Results from ./merge_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 877 ms
+Sorting time: 762 ms
+
+Results from ./merge_sortw/ input file: unsorted_1m.txtValid.
+------------------------------------
+Results from ./merge_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 746 ms
+Sorting time: 652 ms
+
+Results from ./merge_sortw/ input file: sorted_1m.txtValid.
+------------------------------------
+Results from ./heap_sort w/ input file: input.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 0 ms
+Sorting time: 0 ms
+
+Results from ./heap_sortw/ input file: input.txtValid.
+------------------------------------
+Results from ./heap_sort w/ input file: unsorted_1k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 0 ms
+Sorting time: 0 ms
+
+Results from ./heap_sortw/ input file: unsorted_1k.txtValid.
+------------------------------------
+Results from ./heap_sort w/ input file: sorted_1k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 0 ms
+Sorting time: 0 ms
+
+Results from ./heap_sortw/ input file: sorted_1k.txtValid.
+------------------------------------
+Results from ./heap_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 232 ms
+Sorting time: 121 ms
+
+Results from ./heap_sortw/ input file: unsorted_1m.txtValid.
+------------------------------------
+Results from ./heap_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 184 ms
+Sorting time: 91 ms
+
+Results from ./heap_sortw/ input file: sorted_1m.txtValid.
+------------------------------------
+Results from ./bubble_sort w/ input file: input.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 0 ms
+Sorting time: 0 ms
+
+Results from ./bubble_sortw/ input file: input.txtValid.
+------------------------------------
+Results from ./bubble_sort w/ input file: unsorted_1k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 1 ms
+Sorting time: 0 ms
+
+Results from ./bubble_sortw/ input file: unsorted_1k.txtValid.
+------------------------------------
+Results from ./bubble_sort w/ input file: sorted_1k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 1 ms
+Sorting time: 0 ms
+
+Results from ./bubble_sortw/ input file: sorted_1k.txtValid.
+------------------------------------
+Results from ./bubble_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 1716633 ms
+Sorting time: 1716527 ms
+
+Results from ./bubble_sortw/ input file: unsorted_1m.txtValid.
+------------------------------------
+Results from ./bubble_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 751335 ms
+Sorting time: 751222 ms
+
+Results from ./bubble_sortw/ input file: sorted_1m.txtValid.
+------------------------------------
+Results from ./insertion_sort w/ input file: input.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 0 ms
+Sorting time: 0 ms
+
+Results from ./insertion_sortw/ input file: input.txtValid.
+------------------------------------
+Results from ./insertion_sort w/ input file: unsorted_1k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 0 ms
+Sorting time: 0 ms
+
+Results from ./insertion_sortw/ input file: unsorted_1k.txtValid.
+------------------------------------
+Results from ./insertion_sort w/ input file: sorted_1k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 0 ms
+Sorting time: 0 ms
+
+Results from ./insertion_sortw/ input file: sorted_1k.txtValid.
+------------------------------------
+Results from ./insertion_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 307748 ms
+Sorting time: 307641 ms
+
+Results from ./insertion_sortw/ input file: unsorted_1m.txtValid.
+------------------------------------
+Results from ./insertion_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 95 ms
+Sorting time: 1 ms
+
+Results from ./insertion_sortw/ input file: sorted_1m.txtValid.
+------------------------------------
+Results from ./selection_sort w/ input file: input.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 0 ms
+Sorting time: 0 ms
+
+Results from ./selection_sortw/ input file: input.txtValid.
+------------------------------------
+Results from ./selection_sort w/ input file: unsorted_1k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 1 ms
+Sorting time: 1 ms
+
+Results from ./selection_sortw/ input file: unsorted_1k.txtValid.
+------------------------------------
+Results from ./selection_sort w/ input file: sorted_1k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 0 ms
+Sorting time: 0 ms
+
+Results from ./selection_sortw/ input file: sorted_1k.txtValid.
+------------------------------------
+Results from ./selection_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 1437291 ms
+Sorting time: 1437182 ms
+
+Results from ./selection_sortw/ input file: unsorted_1m.txtValid.
+------------------------------------
+Results from ./selection_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 421135 ms
+Sorting time: 421038 ms
+
+Results from ./selection_sortw/ input file: sorted_1m.txtValid.
+------------------------------------
+Results from ./quick_sort w/ input file: input.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 0 ms
+Sorting time: 0 ms
+
+Results from ./quick_sortw/ input file: input.txtValid.
+------------------------------------
+Results from ./quick_sort w/ input file: unsorted_1k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 6 ms
+Sorting time: 5 ms
+
+Results from ./quick_sortw/ input file: unsorted_1k.txtValid.
+------------------------------------
+Results from ./quick_sort w/ input file: sorted_1k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 22 ms
+Sorting time: 21 ms
+
+Results from ./quick_sortw/ input file: sorted_1k.txtValid.
+------------------------------------
+Results from ./quick_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 9233 ms
+Sorting time: 9121 ms
+
+Results from ./quick_sortw/ input file: unsorted_1m.txtValid.
+------------------------------------
+Results from ./quick_sort w/ input file: sorted_1m.txt:
+Killed
+Error running program: ./quick_sort
+------------------------------------

@@ -1,0 +1,35 @@
+Results from ./comb_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 20351 ms
+Sorting time: 20214 ms
+
+Results from ./comb_sort w/ input file: unsorted_1m.txt is Valid.
+------------------------------------
+Results from ./comb_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 184 ms
+Sorting time: 45 ms
+
+Results from ./comb_sort w/ input file: sorted_1m.txt is Valid.
+------------------------------------
+Results from ./comb_sort w/ input file: partially_sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 19339 ms
+Sorting time: 19203 ms
+
+Results from ./comb_sort w/ input file: partially_sorted_1m.txt is Valid.
+------------------------------------
+Results from ./comb_sort w/ input file: dup_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 116 ms
+Sorting time: 41 ms
+
+Results from ./comb_sort w/ input file: dup_1m.txt is Valid.
+------------------------------------
+Results from ./comb_sort w/ input file: descend_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 4284 ms
+Sorting time: 4172 ms
+
+Results from ./comb_sort w/ input file: descend_1m.txt is Valid.
+------------------------------------

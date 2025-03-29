@@ -1,0 +1,72 @@
+Results from ./comb_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 18265 ms
+Sorting time: 18130 ms
+
+Results from ./comb_sort w/ input file: unsorted_1m.txt is Valid.
+------------------------------------
+Results from ./comb_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 153 ms
+Sorting time: 30 ms
+
+Results from ./comb_sort w/ input file: sorted_1m.txt is Valid.
+------------------------------------
+Results from ./comb_sort w/ input file: partially_sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 18861 ms
+Sorting time: 18742 ms
+
+Results from ./comb_sort w/ input file: partially_sorted_1m.txt is Valid.
+------------------------------------
+Results from ./comb_sort w/ input file: dup_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 109 ms
+Sorting time: 28 ms
+
+Results from ./comb_sort w/ input file: dup_1m.txt is Valid.
+------------------------------------
+Results from ./comb_sort w/ input file: descend_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 4428 ms
+Sorting time: 4309 ms
+
+Results from ./comb_sort w/ input file: descend_1m.txt is Valid.
+------------------------------------
+(.venv) guinueng@DESKTOP-G525C48:~/Intro_to_Algorithm/assignment_1$ ./auto_eval_adv 
+Results from ./comb_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 20351 ms
+Sorting time: 20214 ms
+
+Results from ./comb_sort w/ input file: unsorted_1m.txt is Valid.
+------------------------------------
+Results from ./comb_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 184 ms
+Sorting time: 45 ms
+
+Results from ./comb_sort w/ input file: sorted_1m.txt is Valid.
+------------------------------------
+Results from ./comb_sort w/ input file: partially_sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 19339 ms
+Sorting time: 19203 ms
+
+Results from ./comb_sort w/ input file: partially_sorted_1m.txt is Valid.
+------------------------------------
+Results from ./comb_sort w/ input file: dup_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 116 ms
+Sorting time: 41 ms
+
+Results from ./comb_sort w/ input file: dup_1m.txt is Valid.
+------------------------------------
+Results from ./comb_sort w/ input file: descend_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 4284 ms
+Sorting time: 4172 ms
+
+Results from ./comb_sort w/ input file: descend_1m.txt is Valid.
+------------------------------------
+

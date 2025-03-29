@@ -1,150 +1,62 @@
 #include <iostream>
 #include <fstream>
-#include <deque>
+#include <vector>
 #include <string>
 #include <chrono>
 
-void swap(std::deque<int>& arr, int l_pos, int r_pos){
+void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     int tmp = arr[l_pos];
     arr[l_pos] = arr[r_pos];
     arr[r_pos] = tmp;
 }
 
-void quick_sort(std::deque<int>& arr, int s, int e){
+void quick_sort(std::vector<int>& arr){
+    size_t back = arr.size() - 1;
 
-    // std::cout << "\ns: " << s << " e: " << e << "\n";
-
-    // int back = arr.size() - 1;
-
-    if((e - s) <= 0){
+    if(arr.size() < 2){
         return;
     }
 
     // 1. Select pivot at the last point of arr.
-    int pivot = arr.at(e); // Pivot can be any value. In assignment document, test it and add it.
-    // std::cout << "pivot: " << pivot << "\n";
-    // Pivot = back elem > can cause stack overflow. > need to increase stack
+    int pivot = arr.at(back / 2); // Pivot can be any value. In assignment document, test it and add it.
 
-    // std::cout << "\ninput arr: ";
-    // for(int i = s; i <= e; i++){
-    //     std::cout << arr.at(i) << " ";
-    // }
-    // std::cout << "\n";
+    // Pivot = back elem > can cause stack overflow. > need to increase stack
 
     // 2. Move integer into 3 sub-array which is designed to
     //    store less than / equal / higher than pivot.
-    // std::deque<int> S, E, H;
-    int k = s, h = e - 1, cnt = 0;
-    while(cnt != (e - s)){
-        // std::cout << "\nsorting_arr: ";
-        // for(int i = s; i <= e; i++){
-        //     std::cout << arr.at(i) << " ";
-        // }
-        // std::cout << "\n";
-        if(arr.at(k) < pivot){
-            // S.push_back(arr.at(i));
-            k++;
+    std::vector<int> S, E, H;
+    while(!arr.empty()){
+        int i = arr.at(back);
+        if(i < pivot){
+            S.push_back(i);
         }
-        else if(arr.at(k) > pivot){
-            // H.push_back(arr.at(i));
-            swap(arr, k, h);
-            h--;
+        else if(i > pivot){
+            H.push_back(i);
         }
         else{
-            // E.push_back(arr.at(i));
-            cnt++;
-            swap(arr, k, e - cnt);
+            E.push_back(i);
         }
-        // arr.pop_back();
-        if(k >= h){
-            break;
-        }
-        // cnt--;
+        arr.pop_back();
+        back--;
     }
-
-    // std::cout << "\nsorted_arr: ";
-    // for(int i = s; i <= e; i++){
-    //     std::cout << arr.at(i) << " ";
-    // }
-    // std::cout << "\n";
-
-    // std::cout << "h: " << h << std::endl;
-
-    int pivot_idx = e, pivot_start = s;
-    bool pivot_mod = false;
-    bool pivot_exit = false;
-    for(int i = s; i <= e - 1; i++){
-        if(arr.at(i) > arr.at(pivot_idx)){
-            if(arr.at(pivot_idx - 1) != pivot){
-                pivot_exit = true;
-            }
-            swap(arr, i, pivot_idx);
-            if(!pivot_mod){
-                pivot_start = i;
-                pivot_mod = true;
-            }
-            pivot_idx--;
-            if(pivot_exit){ // Need to mod it. 
-                pivot_idx = i;
-                break;
-            }
-        }
-    }
-    // swap(arr, h, e);
-
-    // std::cout << "\nswap_arr: ";
-    // for(int i = s; i <= e; i++){
-    //     std::cout << arr.at(i) << " ";
-    // }
-    // std::cout << "\n";
-
-    // int pos = s;
-    // while(!S.empty()){
-    //     arr.at(pos) = S.front();
-    //     S.pop_front();
-    //     pos++;
-    // }
-    // while(!E.empty()){
-    //     arr.at(pos) = E.front();
-    //     E.pop_front();
-    //     pos++;
-    // }
-    // while(!H.empty()){
-    //     arr.at(pos) = H.front();
-    //     H.pop_front();
-    //     pos++;
-    // }
-
-    // S.resize(0);
-    // E.resize(0);
-    // H.resize(0);
-
-    // std::cout << k << "h: " << h << "\n";
 
     // 3. Since arr E is already sorted(due to it is same as
     //    pivot), so we sort S and H arr.
-    // if(e == 3 || s == 5){
-    //     return;
-    // }
-
-    // std::cout << pivot_start << pivot_idx << std::endl;
-    if(s < pivot_start - 1)
-        quick_sort(arr, s, pivot_start - 1);
-    if(pivot_idx + 1 < e)
-        quick_sort(arr, pivot_idx + 1, e);
+    quick_sort(S);
+    quick_sort(H);
 
     // 4. Finally, combine sorted result into original array.
-    // for(auto i: S){
-    //     arr.push_back(i);
-    // }
+    for(auto i: S){
+        arr.push_back(i);
+    }
 
-    // for(auto i: E){
-    //     arr.push_back(i);
-    // }
+    for(auto i: E){
+        arr.push_back(i);
+    }
 
-    // for(auto i: H){
-    //     arr.push_back(i);
-    // }
+    for(auto i: H){
+        arr.push_back(i);
+    }
 }
 
 int main(int argc, char* argv[]){
@@ -167,20 +79,20 @@ int main(int argc, char* argv[]){
         std::cerr << "Error: Could not open input file: " << inputFile << std::endl;
     }
 
-    // Allocate deque to store numbers read in file.
-    std::deque<int> numbers;
-    // numbers.reserve(1000001);
+    // Allocate vector to store numbers read in file.
+    std::vector<int> numbers;
+    numbers.reserve(1000001);
 
     // Read numbers from file.
     int number;
     while (inFile >> number){
-        // Add numbers in deque.
+        // Add numbers in vector.
         numbers.push_back(number);
     }
 
     // Print data from read file.
     // std::cout << "Numbers read from file:\n";
-    // for (int i = 0; i < numbers.size(); ++i) {
+    // for (size_t i = 0; i < numbers.size(); ++i) {
     //     std::cout << numbers[i] << " ";
     //     if ((i + 1) % 10 == 0) {
     //         // Print 10 element and make new line.
@@ -195,7 +107,7 @@ int main(int argc, char* argv[]){
     auto sort_start = std::chrono::high_resolution_clock::now();
 
     // Pursue merge sort.
-    quick_sort(numbers, 0, numbers.size() - 1);
+    quick_sort(numbers);
 
     // End measuring sort_func finish time
     auto sort_end = std::chrono::high_resolution_clock::now();

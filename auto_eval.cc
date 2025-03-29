@@ -37,7 +37,7 @@ void runProgram(const std::string& program, const std::string& input_arg, const 
     int prev_number;
     bool first = true;
     while (outputFile >> number){
-        std::cout << number << "\n";
+        // std::cout << number << "\n";
         if(first){
             prev_number = number;
             first = false;
@@ -47,6 +47,7 @@ void runProgram(const std::string& program, const std::string& input_arg, const 
                 stat = false;
                 break;
             }
+            prev_number = number;
         }
     }
 
@@ -63,22 +64,22 @@ void runProgram(const std::string& program, const std::string& input_arg, const 
 int main() {
     // List of programs and their arguments
     std::vector<std::string> progs = {
-        // "./merge_sort",
+        "./merge_sort",
         "./heap_sort",
-        // "./bubble_sort",
-        // "./insertion_sort",
-        // "./selection_sort",
-        // "./quick_sort"
+        "./bubble_sort",
+        "./insertion_sort",
+        "./selection_sort",
+        "./quick_sort"
     };
 
     std::vector<std::pair<std::string, std::string>> args = {
         // {"input.txt", "output.txt"},
-        // {"unsorted_1k.txt", "1k_output.txt"},
-        // {"sorted_1k.txt", "1k_output.txt"},
+        // // {"unsorted_1k.txt", "1k_output.txt"},
+        // // {"sorted_1k.txt", "1k_output.txt"},
         {"unsorted_1m.txt", "1m_output.txt"},
         {"sorted_1m.txt", "1m_output.txt"},
-        // {"unsorted_1m_2.txt", "1m_output_2.txt"},
-        // {"sorted_1m_2.txt", "1m_output_2.txt"},
+        // // {"unsorted_1m_2.txt", "1m_output_2.txt"},
+        // // {"sorted_1m_2.txt", "1m_output_2.txt"},
         {"partially_sorted_1m.txt", "partially_1m_output.txt"},
         {"dup_1m.txt", "dup_1m_output.txt"},
         {"descend_1m.txt", "descend_1m_output.txt"}

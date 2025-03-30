@@ -1,0 +1,210 @@
+Results from ./merge_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 1015 ms
+Sorting time: 878 ms
+
+Results from ./merge_sort w/ input file: unsorted_1m.txt is Valid.
+------------------------------------
+Results from ./merge_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 891 ms
+Sorting time: 766 ms
+
+Results from ./merge_sort w/ input file: sorted_1m.txt is Valid.
+------------------------------------
+Results from ./merge_sort w/ input file: partially_sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 1071 ms
+Sorting time: 913 ms
+
+Results from ./merge_sort w/ input file: partially_sorted_1m.txt is Valid.
+------------------------------------
+Results from ./merge_sort w/ input file: dup_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 899 ms
+Sorting time: 814 ms
+
+Results from ./merge_sort w/ input file: dup_1m.txt is Valid.
+------------------------------------
+Results from ./merge_sort w/ input file: descend_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 948 ms
+Sorting time: 817 ms
+
+Results from ./merge_sort w/ input file: descend_1m.txt is Valid.
+------------------------------------
+Results from ./heap_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 344 ms
+Sorting time: 201 ms
+
+Results from ./heap_sort w/ input file: unsorted_1m.txt is Valid.
+------------------------------------
+Results from ./heap_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 238 ms
+Sorting time: 113 ms
+
+Results from ./heap_sort w/ input file: sorted_1m.txt is Valid.
+------------------------------------
+Results from ./heap_sort w/ input file: partially_sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 325 ms
+Sorting time: 173 ms
+
+Results from ./heap_sort w/ input file: partially_sorted_1m.txt is Valid.
+------------------------------------
+Results from ./heap_sort w/ input file: dup_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 149 ms
+Sorting time: 14 ms
+
+Results from ./heap_sort w/ input file: dup_1m.txt is Valid.
+------------------------------------
+Results from ./heap_sort w/ input file: descend_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 260 ms
+Sorting time: 118 ms
+
+Results from ./heap_sort w/ input file: descend_1m.txt is Valid.
+------------------------------------
+Results from ./bubble_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 2088026 ms
+Sorting time: 2087855 ms
+
+Results from ./bubble_sort w/ input file: unsorted_1m.txt is Valid.
+------------------------------------
+Results from ./bubble_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 948640 ms
+Sorting time: 948500 ms
+
+Results from ./bubble_sort w/ input file: sorted_1m.txt is Valid.
+------------------------------------
+Results from ./bubble_sort w/ input file: partially_sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 1319428 ms
+Sorting time: 1319265 ms
+
+Results from ./bubble_sort w/ input file: partially_sorted_1m.txt is Valid.
+------------------------------------
+Results from ./bubble_sort w/ input file: dup_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 877375 ms
+Sorting time: 877253 ms
+
+Results from ./bubble_sort w/ input file: dup_1m.txt is Valid.
+------------------------------------
+Results from ./bubble_sort w/ input file: descend_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 786007 ms
+Sorting time: 785792 ms
+
+Results from ./bubble_sort w/ input file: descend_1m.txt is Valid.
+------------------------------------
+Results from ./insertion_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 312307 ms
+Sorting time: 312191 ms
+
+Results from ./insertion_sort w/ input file: unsorted_1m.txt is Valid.
+------------------------------------
+Results from ./insertion_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 103 ms
+Sorting time: 1 ms
+
+Results from ./insertion_sort w/ input file: sorted_1m.txt is Valid.
+------------------------------------
+Results from ./insertion_sort w/ input file: partially_sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 233266 ms
+Sorting time: 233135 ms
+
+Results from ./insertion_sort w/ input file: partially_sorted_1m.txt is Valid.
+------------------------------------
+Results from ./insertion_sort w/ input file: dup_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 85 ms
+Sorting time: 2 ms
+
+Results from ./insertion_sort w/ input file: dup_1m.txt is Valid.
+------------------------------------
+Results from ./insertion_sort w/ input file: descend_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 642370 ms
+Sorting time: 642254 ms
+
+Results from ./insertion_sort w/ input file: descend_1m.txt is Valid.
+------------------------------------
+Results from ./selection_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 1563692 ms
+Sorting time: 1563549 ms
+
+Results from ./selection_sort w/ input file: unsorted_1m.txt is Valid.
+------------------------------------
+Results from ./selection_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 543605 ms
+Sorting time: 543393 ms
+
+Results from ./selection_sort w/ input file: sorted_1m.txt is Valid.
+------------------------------------
+Results from ./selection_sort w/ input file: partially_sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 1272155 ms
+Sorting time: 1271985 ms
+
+Results from ./selection_sort w/ input file: partially_sorted_1m.txt is Valid.
+------------------------------------
+Results from ./selection_sort w/ input file: dup_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 433000 ms
+Sorting time: 432926 ms
+
+Results from ./selection_sort w/ input file: dup_1m.txt is Valid.
+------------------------------------
+Results from ./selection_sort w/ input file: descend_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 822704 ms
+Sorting time: 822565 ms
+
+Results from ./selection_sort w/ input file: descend_1m.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: unsorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 6619 ms
+Sorting time: 6475 ms
+
+Results from ./quick_sort w/ input file: unsorted_1m.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 3371 ms
+Sorting time: 3240 ms
+
+Results from ./quick_sort w/ input file: sorted_1m.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: partially_sorted_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 4588 ms
+Sorting time: 4456 ms
+
+Results from ./quick_sort w/ input file: partially_sorted_1m.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: dup_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 76 ms
+Sorting time: 10 ms
+
+Results from ./quick_sort w/ input file: dup_1m.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: descend_1m.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 3397 ms
+Sorting time: 3295 ms
+
+Results from ./quick_sort w/ input file: descend_1m.txt is Valid.
+------------------------------------

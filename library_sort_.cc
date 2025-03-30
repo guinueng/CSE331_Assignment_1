@@ -6,59 +6,92 @@
 #include <chrono>
 #include <cmath>
 
-void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
-    int tmp = arr[l_pos];
-    arr[l_pos] = arr[r_pos];
-    arr[r_pos] = tmp;
-}
+const int GAP = INT_MAX;  // 실제 데이터와 겹치지 않는 값 사용
 
-size_t bin_search(int target, const std::vector<int>& sorted, size_t high) {
-    size_t low = 0;
-    while (low < high){
+size_t find_insert_pos(int target, const std::vector<int>& sorted, size_t low, size_t high) {
+    while (low < high) {
         size_t mid = low + (high - low) / 2;
-        size_t pos = mid;
-
-        while (pos < sorted.size() && sorted[pos] == INT_MIN){
-            pos++;
-        }
-        if (pos >= sorted.size() || sorted[pos] > target){
+        int val = sorted[mid];
+        
+        if (val == GAP || val > target) {
             high = mid;
-        }
-        else{
+        } else {
             low = mid + 1;
         }
     }
     return low;
 }
 
-void rebalance(std::vector<int>& arr, size_t f, size_t b){
-    arr.resize(2 * arr.size());
-
-    while(b >= f){
-        arr[2 * b] = INT_MIN;
-        swap(arr, b, 2 * b);
-        b--;
+void rebalance(std::vector<int>& sorted, size_t& spacing) {
+    std::vector<int> new_array;
+    size_t elements = 0;
+    
+    // 실제 요소 개수 계산
+    for (int num : sorted) {
+        if (num != GAP) ++elements;
     }
+
+    // 새로운 간격 계산
+    spacing = static_cast<size_t>(std::sqrt(elements)) + 1;
+    size_t new_size = elements * (spacing + 1) + spacing;
+    new_size = std::max(new_size, sorted.size() * 2);
+    
+    new_array.resize(new_size, GAP);
+    
+    // 요소 재배치
+    size_t pos = spacing;
+    for (int num : sorted) {
+        if (num != GAP) {
+            new_array[pos] = num;
+            pos += spacing + 1;
+        }
+    }
+    
+    sorted.swap(new_array);
 }
 
-void library_sort(std::vector<int>& arr){
-    size_t n = arr.size() - 1;
-    std::vector<int> sorted(2 * (n), INT_MIN);
+void library_sort(std::vector<int>& arr) {
+    if (arr.size() <= 1) return;
 
-    size_t size = 2;
-    for(size_t i = 1; int(ceil(log2(n - 1))); i++){
-        rebalance(sorted, 1, size / 2);
-        for(size_t j = size / 2; j <= size; j++){
-            size_t pos = bin_search(arr[j], sorted, size);
-            sorted[pos] = arr[j];
+    size_t spacing = 2;
+    std::vector<int> sorted(arr.size() * 2, GAP);
+    sorted[spacing] = arr[0];
+    size_t inserted = 1;
+
+    while (inserted < arr.size()) {
+        if (inserted * (spacing + 1) > sorted.size()) {
+            rebalance(sorted, spacing);
         }
-        size *= 2;
+
+        size_t batch_size = std::min(inserted, arr.size() - inserted);
+        for (size_t i = 0; i < batch_size; ++i) {
+            int element = arr[inserted + i];
+            size_t pos = find_insert_pos(element, sorted, 0, sorted.size());
+
+            // 빈 공간 탐색
+            while (pos < sorted.size() && sorted[pos] != GAP) ++pos;
+            
+            // 공간 부족 시 재조정
+            if (pos >= sorted.size()) {
+                rebalance(sorted, spacing);
+                pos = find_insert_pos(element, sorted, 0, sorted.size());
+                while (pos < sorted.size() && sorted[pos] != GAP) ++pos;
+            }
+
+            if (pos < sorted.size()) {
+                sorted[pos] = element;
+                ++inserted;
+            }
+        }
     }
 
-    size_t idx = 1;
-    for(auto i : sorted){
-        if(i != INT_MIN){
-            arr[idx++] = i;
+    // 결과 추출
+    size_t write_idx = 0;
+    for (int num : sorted) {
+        if (num != GAP) {
+            if (write_idx < arr.size()) {
+                arr[write_idx++] = num;
+            }
         }
     }
 }
@@ -88,7 +121,7 @@ int main(int argc, char* argv[]){
     numbers.reserve(1000001);
     
     // Add useless value to make padding.
-    numbers.push_back(0);
+    // numbers.push_back(0);
 
     // Read numbers from file.
     int number;
@@ -96,17 +129,6 @@ int main(int argc, char* argv[]){
         // Add numbers in vector.
         numbers.push_back(number);
     }
-
-    // Print data from read file.
-    // std::cout << "Numbers read from file:\n";
-    // for (size_t i = 1; i < numbers.size(); ++i) {
-    //     std::cout << numbers[i] << " ";
-    //     if ((i + 1) % 10 == 0) {
-    //         // Print 10 element and make new line.
-    //         std::cout << "\n";
-    //     }
-    // }
-    // std::cout << "\nnum size: " << numbers.size() << std::endl;
 
     // Close input file.
     inFile.close();
@@ -121,7 +143,7 @@ int main(int argc, char* argv[]){
     auto sort_end = std::chrono::high_resolution_clock::now();
 
     // Delete first element in vector utilized for padding.
-    numbers.erase(numbers.begin());
+    // numbers.erase(numbers.begin());
 
     // Save result into new file.
     std::ofstream outFile(outputFile);

@@ -3,6 +3,28 @@
 #include <vector>
 #include <cstdlib> // For std::system
 #include <fstream> // For file handling
+#include <unistd.h> // For sysconf
+
+// Function to get memory usage
+void getMemoryUsage(double& vm_usage, double& resident_set) {
+    vm_usage = 0.0;
+    resident_set = 0.0;
+
+    std::ifstream stat_stream("/proc/self/statm", std::ios_base::in);
+    if (!stat_stream.is_open()) {
+        std::cerr << "Failed to open /proc/self/statm for memory usage." << std::endl;
+        return;
+    }
+
+    unsigned long vsize;
+    long rss;
+    stat_stream >> vsize >> rss; // Read virtual memory size and resident set size
+    stat_stream.close();
+
+    long page_size_kb = sysconf(_SC_PAGE_SIZE) / 1024; // Page size in KB
+    vm_usage = vsize / 1024.0; // Convert to MB
+    resident_set = rss * page_size_kb / 1024.0; // Convert to MB
+}
 
 // Function to run a program with arguments and capture its output
 void runProgram(const std::string& program, const std::string& input_arg, const std::string& output_arg) {

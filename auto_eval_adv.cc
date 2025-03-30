@@ -29,7 +29,7 @@ void getMemoryUsage(double& vm_usage, double& resident_set) {
 // Function to run a program with arguments and capture its output
 void runProgram(const std::string& program, const std::string& input_arg, const std::string& output_arg) {
     // Construct the command string
-    std::string command = program + " ./test_case/" + input_arg + " ./test_case/" + output_arg; // Redirect output to a file
+    std::string command = "/usr/bin/time -v " + program + " ./test_case/" + input_arg + " ./test_case/" + output_arg; // Redirect output to a file
 
     // Print the results
     std::cout << "Results from " << program << " w/ input file: " << input_arg << ":" << std::endl;
@@ -89,7 +89,8 @@ int main() {
         // "./comb_sort",
         // "./tournament_sort",
         // "./intro_sort",
-        "./cocktail_shaker_sort"
+        //"./cocktail_shaker_sort",
+        "./library_sort",
     };
 
     std::vector<std::pair<std::string, std::string>> args = {

@@ -14,12 +14,11 @@ void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
 }
 
 size_t bin_search(int target, const std::vector<int>& sorted, size_t high) {
-    // std::cout << "bin\n";
     size_t low = 0;
     while (low < high){
         size_t mid = low + (high - low) / 2;
         size_t pos = mid;
-        // std::cout << "high: " << high << " mid: " << mid << " low: " << low << " pos: " << pos <<"\n";
+
         while (pos < sorted.size() && sorted[pos] == INT_MIN){
             pos++;
         }
@@ -35,16 +34,14 @@ size_t bin_search(int target, const std::vector<int>& sorted, size_t high) {
 
 void rebalance(std::vector<int>& arr, size_t f, size_t b){
     size_t before_size = arr.size();
-    // std::cout << "bef: " << before_size << "\n";
+
     arr.resize(2 * before_size);
     for(size_t i = before_size; i < 2 * before_size; i++){
         arr[i] = INT_MIN;
     }
-    // std::cout << "bef prog" << "\n";
+
     b--;
     while(b >= f){
-        //arr[2 * b] = INT_MIN;
-        // std::cout << "b: " << b << "\n";
         swap(arr, b, 2 * b);
         if(b == 0)
             break;
@@ -56,98 +53,67 @@ void library_sort(std::vector<int>& arr){
     size_t n = arr.size();
     std::vector<int> sorted(2, INT_MIN);
 
-    // std::cout << "n: " << n << " log n: " << int(ceil(log2(n - 1))) << " \n";
     size_t size = 0;
     for(size_t i = 0; i < n; i++){
-        // for(auto i : sorted){
-            // std::cout << i << " ";
-        // }
-        // std::cout << "i: " << i << " size: " << sorted.size() << "\n";
-        //if(size >= sorted.size()){
-        //    std::cout << "rebalance need\n";
-        //    rebalance(sorted, 0, sorted.size());
-        //    
-        //    for(auto i : sorted){
-        //        std::cout << i << " ";
-        //    }
-        //    std::cout << "rebalance complete\n";
-        //}
-        //for(size_t j = size / 2; j <= size; j++){
-            
-            if(size >= sorted.size()){
-                // std::cout << "rebalance need\n";
-                rebalance(sorted, 0, sorted.size());
-                
-                // for(auto i : sorted){
-                    // std::cout << i << " ";
-                // }
-                // std::cout << "rebalance complete\n";
-                //std::cout << "target: " << arr[size] << " pos: " << size << "\n";
-                //pos = bin_search(arr[size], sorted, sorted.size());
-                //std::cout << "pos: " << pos << "\n";
-            }
+        if(size >= sorted.size()){
+            rebalance(sorted, 0, sorted.size());
+        }
 
-            // std::cout << "target: " << arr[size] << " pos: " << size << "\n";
-            size_t pos = bin_search(arr[size], sorted, sorted.size());
-            // std::cout << "pos: " << pos << "\n";
+        size_t pos = bin_search(arr[size], sorted, sorted.size());
 
-            if(pos >= sorted.size()){
-                pos = sorted.size() - 1;
-            }
-            // std::cout << "2 pos: " << pos << "\n";
-            if(sorted[pos] != INT_MIN){
-                bool solved = false;
-                while(!solved){
-                    bool low = false, high = false;
-                    size_t mov_end = pos;
-                    if(sorted[pos] >= arr[size] || high){
-                        high = false;
-                        // std::cout << 1 << "\n";
-                        while(sorted[mov_end] != INT_MIN){
-                            mov_end++;
-                            if(mov_end >= sorted.size()){
-                                low = true;
-                                break;
-                            }
-                        }
-                        // std::cout << "mov_end: " << mov_end << "\n";
-                        //if(mov_end > sorted.size()){
-                        //    low = true;
-                        //}
-                        if(!low){
-                            for(size_t i = mov_end; i > pos; i--){
-                                sorted[i] = sorted[i - 1];
-                            }
-                            solved = true;
+        if(pos >= sorted.size()){
+            pos = sorted.size() - 1;
+        }
+
+        if(sorted[pos] != INT_MIN){
+            bool solved = false;
+            while(!solved){
+                bool low = false, high = false;
+                size_t mov_end = pos;
+                if(sorted[pos] >= arr[size] || high){
+                    high = false;
+
+                    while(sorted[mov_end] != INT_MIN){
+                        mov_end++;
+                        if(mov_end >= sorted.size()){
+                            low = true;
+                            break;
                         }
                     }
-                    if(sorted[pos] < arr[size] || low){
-                        if(low){
-                            low = false;
-                            pos--;
+
+                    if(!low){
+                        for(size_t i = mov_end; i > pos; i--){
+                            sorted[i] = sorted[i - 1];
                         }
-                        // std::cout << 2 << "\n";
-                        size_t mov_front = pos;
-                        // std::cout << mov_front << "\n";
-                        while(sorted[mov_front] != INT_MIN){
-                            if(mov_front == 0){
-                                high = true;
-                                break;
-                            }
-                            mov_front--;
+                        solved = true;
+                    }
+                }
+                if(sorted[pos] < arr[size] || low){
+                    if(low){
+                        low = false;
+                        pos--;
+                    }
+
+                    size_t mov_front = pos;
+
+                    while(sorted[mov_front] != INT_MIN){
+                        if(mov_front == 0){
+                            high = true;
+                            break;
                         }
-                        // std::cout << "mov_fornt: " << mov_front << "\n";
-                        if(!high){
-                            for(size_t i = mov_front; i < pos; i++){
-                                sorted[i] = sorted[i + 1];
-                            }
-                            solved = true;
+                        mov_front--;
+                    }
+
+                    if(!high){
+                        for(size_t i = mov_front; i < pos; i++){
+                            sorted[i] = sorted[i + 1];
                         }
+                        solved = true;
                     }
                 }
             }
-            sorted[pos] = arr[size];
-        //}
+        }
+        sorted[pos] = arr[size];
         size++;
     }
 

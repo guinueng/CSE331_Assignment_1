@@ -4,6 +4,7 @@
 #include <cmath>
 #include <chrono>
 #include <climits>
+#include <bits/stdc++.h>
 
 void swap(std::vector<int>& arr, size_t a, size_t b) {
     if (a >= arr.size() || b >= arr.size()) return;
@@ -150,22 +151,12 @@ int main(int argc, char* argv[]) {
     auto sort_elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(sort_end - sort_start).count();
     std::cout << "Elapsed time: " << elapsed << " ms\n" << "Sorting time: " << sort_elapsed << " ms\n" << std::endl;
 
+    if(std::is_sorted(numbers.begin(), numbers.end())){
+        std::cout << "Sorted!\n";
+    }
+    else{
+        std::cout << "ERROR!\n";
+    }
+
     return 0;
-    
-    // if (argc != 3) {
-    //     cerr << "Usage: " << argv[0] << " <input> <output>\n";
-    //     return 1;
-    // }
-
-    // vector<int> numbers;
-    // ifstream in(argv[1]);
-    // int num;
-    // while (in >> num) numbers.push_back(num);
-
-    // tournament_sort(numbers);
-
-    // ofstream out(argv[2]);
-    // for (auto n : numbers) out << n << "\n";
-
-    // return 0;
 }

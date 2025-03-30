@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <chrono>
+#include <bits/stdc++.h>
 
 void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     int tmp = arr[l_pos];
@@ -124,6 +125,13 @@ int main(int argc, char* argv[]){
     auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     auto sort_elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(sort_end - sort_start).count();
     std::cout << "Elapsed time: " << elapsed << " ms\n" << "Sorting time: " << sort_elapsed << " ms\n" << std::endl;
+
+    if(std::is_sorted(numbers.begin(), numbers.end())){
+        std::cout << "Sorted!\n";
+    }
+    else{
+        std::cout << "ERROR!\n";
+    }
 
     return 0;
 }

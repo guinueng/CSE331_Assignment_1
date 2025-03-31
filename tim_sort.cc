@@ -46,71 +46,80 @@ void insertion_sort(std::vector<int>& arr, int l, int r){
     }
 }
 
-void merge(std::vector<int>& arr, int l, int m, int r){
-    int x = 0, y = 0, i = 0, j = 0, k = 0;
-    int len_1 = m - l + 1;
-    int len_2 = r - m;
-    std::vector<int> left;
-    left.resize(len_1);
-    std::vector<int> right;
-    right.resize(len_2);
+// void merge(std::vector<int>& arr, int l, int m, int r){
+//     int x = 0, y = 0, i = 0, j = 0, k = 0;
+//     int len_1 = m - l + 1;
+//     int len_2 = r - m;
+//     std::vector<int> left;
+//     left.resize(len_1);
+//     std::vector<int> right;
+//     right.resize(len_2);
+// 
+//     while(x < len_1){
+//         left[x] = arr[l + x];
+//         x++;
+//     }
+// 
+//     while(y < len_2){
+//         right[y] = arr[m + y + 1];
+//         y++;
+//     }
+// 
+//     while(i < len_1 && j < len_2){
+//         if(left[i] <= right[j]){
+//             arr[k] = left[i];
+//             i++;
+//         }
+//         else{
+//             arr[k] = right[j];
+//             j++;
+//         }
+//         k++;
+//     }
+// 
+//     while(i < len_1){
+//         arr[k++] = left[i++];
+//     }
+// 
+//     while(j < len_2){
+//         arr[k++] = right[j++];
+//     }
+// }
 
-    while(x < len_1){
-        left[x] = arr[l + x];
-        x++;
-    }
+// 2. 병합 함수 수정 버전
+void merge(std::vector<int>& arr, int l, int m, int r) {
+    int len1 = m - l + 1;
+    int len2 = r - m; // ✅ 수정
+    std::vector<int> left(len1), right(len2);
 
-    while(y < len_2){
-        right[y] = arr[m + y + 1];
-        y++;
-    }
+    for (int i = 0; i < len1; ++i)
+        left[i] = arr[l + i];
+    for (int j = 0; j < len2; ++j)
+        right[j] = arr[m + 1 + j]; // ✅ m+1부터 복사
 
-    while(i < len_1 && j < len_2){
-        if(left[i] <= right[j]){
-            arr[k] = left[i];
-            i++;
-        }
-        else{
-            arr[k] = right[j];
-            j++;
-        }
-        k++;
+    int i = 0, j = 0, k = l; // ✅ k = l 시작
+    while (i < len1 && j < len2) {
+        arr[k++] = (left[i] <= right[j]) ? left[i++] : right[j++];
     }
-
-    while(i < len_1){
-        arr[k++] = left[i++];
-    }
-
-    while(j < len_2){
-        arr[k++] = right[j++];
-    }
+    while (i < len1) arr[k++] = left[i++];
+    while (j < len2) arr[k++] = right[j++];
 }
 
-void tim_sort(std::vector<int>& arr){
-    int n = arr.size();
-    int run = 32;
-    int i = 0;
-    int left = 0;
-    int size = run;
-    
-    while(i < n){
-        int tmp = std::min(i + run -1, n - 1);
-        insertion_sort(arr, i, tmp);
-        i += run;
-    }
+// 3. 팀소트 메인 함수 수정
+void tim_sort(std::vector<int>& arr) {
+    const int n = arr.size();
+    const int run = 32;
 
-    while(size < n){
-        while(left < n){
+    for (int i = 0; i < n; i += run)
+        insertion_sort(arr, i, std::min(i + run - 1, n - 1));
+
+    for (int size = run; size < n; size *= 2) {
+        for (int left = 0; left < n; left += 2 * size) { // ✅ left += 2*size
             int mid = left + size - 1;
             int right = std::min(left + 2 * size - 1, n - 1);
-            if(mid < right){
+            if (mid < right) // 병합 필요 조건 확인
                 merge(arr, left, mid, right);
-            }
-            left = 2 * size;
         }
-
-        left = 0;
-        size *= 2;
     }
 }
 

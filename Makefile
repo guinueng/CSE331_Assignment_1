@@ -10,7 +10,7 @@ LDFLAGS += $(SANFLAGS)
 # quick_sort: LDFLAGS += -Wl,-z,stack-size=0x200000000
 
 # 개별 실행 파일 이름 정의
-TARGETS = merge_sort heap_sort insertion_sort bubble_sort selection_sort quick_sort auto_eval comb_sort auto_eval_adv tournament_sort library_sort
+TARGETS = merge_sort heap_sort insertion_sort bubble_sort selection_sort quick_sort auto_eval comb_sort auto_eval_adv tournament_sort library_sort tim_sort
 
 # 기본 규칙: 모든 실행 파일 생성
 all: $(TARGETS)
@@ -80,6 +80,12 @@ library_sort: library_sort.o
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 library_sort.o: library_sort.cc
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+tim_sort: tim_sort.o
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+tim_sort.o: tim_sort.cc
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # 청소 규칙: 생성된 파일 삭제

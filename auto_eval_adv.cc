@@ -86,10 +86,10 @@ void runProgram(const std::string& program, const std::string& input_arg, const 
 int main() {
     // List of programs and their arguments
     std::vector<std::string> progs = {
-        // "./comb_sort",
-        // "./tournament_sort",
-        // "./intro_sort",
-        //"./cocktail_shaker_sort",
+        "./comb_sort",
+        "./tournament_sort",
+        "./intro_sort",
+        "./cocktail_shaker_sort",
         "./library_sort",
     };
 

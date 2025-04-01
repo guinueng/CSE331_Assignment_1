@@ -21,17 +21,12 @@ void comb_sort(std::vector<int>& arr, long len){
 
     size_t inc = len / 2;
     for(size_t i = 1; i <= size_t(log2(len)); i++){
-        // std::cout << inc << "\n";
         for(size_t j = 1; j <= len - inc; j++){
-            // if(j + inc < len){
-            if(arr.at(j) > arr.at(j + inc)){
+            if(arr[j] > arr[j + inc]){
                 swap(arr, j, j + inc);
             }
-            // else{
-            //     break;
-            // }
-        // }
         }
+
         inc = 3 * inc / 4;
         if(inc <= 1)
             break;
@@ -40,10 +35,9 @@ void comb_sort(std::vector<int>& arr, long len){
     // Pursue compare i and next elem and if condition satisfies(arr[i]
     // > arr[i + 1]) execute swap operation.
     while(len > 0){
-        // std::cout << len << "\n";
         long k = 0;
         for(size_t i = 1; i < len; i++){
-            if(arr.at(i) > arr.at(i + 1)){
+            if(arr[i] > arr[i + 1]){
                 swap(arr, i, i+ 1);
                 k = i;
             }

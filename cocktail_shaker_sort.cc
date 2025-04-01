@@ -28,7 +28,7 @@ void cocktail_shaker_sort(std::vector<int>& arr, size_t len){
     while(max > 1){
         if(ascend){
             for(size_t i = min; i < max; i++){
-                if(arr.at(i) > arr.at(i + 1)){
+                if(arr[i] > arr[i + 1]){
                     swap(arr, i, i+ 1);
                 }
             }
@@ -37,7 +37,7 @@ void cocktail_shaker_sort(std::vector<int>& arr, size_t len){
         }
         else{
             for(size_t i = max; i > min; i--){
-                if(arr.at(i - 1) > arr.at(i)){
+                if(arr[i - 1] > arr[i]){
                     swap(arr, i - 1, i);
                 }
             }

@@ -19,7 +19,7 @@ void quick_sort(std::vector<int>& arr){
     }
 
     // 1. Select pivot at the last point of arr.
-    int pivot = arr.at(back / 2); // Pivot can be any value. In assignment document, test it and add it.
+    int pivot = arr[back / 2]; // Pivot can be any value. In assignment document, test it and add it.
 
     // Pivot = back elem > can cause stack overflow. > need to increase stack
 
@@ -27,7 +27,7 @@ void quick_sort(std::vector<int>& arr){
     //    store less than / equal / higher than pivot.
     std::vector<int> S, E, H;
     while(!arr.empty()){
-        int i = arr.at(back);
+        int i = arr[back];
         if(i < pivot){
             S.push_back(i);
         }

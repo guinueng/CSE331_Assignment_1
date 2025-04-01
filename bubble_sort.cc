@@ -21,7 +21,7 @@ void bubble_sort(std::vector<int>& arr, size_t len){
     // Pursue compare i and next elem and if condition satisfies(arr[i]
     // > arr[i + 1]) execute swap operation.
     for(size_t i = 1; i < len; i++){
-        if(arr.at(i) > arr.at(i + 1)){
+        if(arr[i] > arr[i + 1]){
             swap(arr, i, i+ 1);
         }
     }

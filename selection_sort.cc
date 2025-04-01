@@ -25,7 +25,7 @@ void selection_sort(std::vector<int>& arr, size_t idx){
     // Pursue compare i and next elem and if condition satisfies(arr[i]
     // > arr[i + 1]) execute swap operation.
     for(size_t i = idx; i <= len; i++){
-        if(arr.at(i) < arr.at(idx) && arr.at(i) < arr.at(smallest)){
+        if(arr[i] < arr[idx] && arr[i] < arr[smallest]){
             // swap(arr, i, idx);
             smallest = i;
         }

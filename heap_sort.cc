@@ -17,7 +17,7 @@ void max_heapify(std::vector<int>& arr, size_t idx, size_t len){
     size_t largest = idx;
 
     // 1. Check left child elem exist and it is bigger than root.
-    if(left < len && arr.at(left) > arr.at(idx)){
+    if(left < len && arr[left] > arr[idx]){
         largest = left;
     }
     // else{
@@ -26,7 +26,7 @@ void max_heapify(std::vector<int>& arr, size_t idx, size_t len){
 
     // 2. Check right child elem exist and it is bigger than bigger one btw
     //    left and target idx.
-    if(right < len && arr.at(right) > arr.at(largest)){
+    if(right < len && arr[right] > arr[largest]){
         largest = right;
     }
 

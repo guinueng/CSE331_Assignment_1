@@ -1,24 +1,24 @@
 Results from ./merge_sort w/ input file: unsorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 1042 ms
-Sorting time: 901 ms
+Elapsed time: 908 ms
+Sorting time: 798 ms
 
 Sorted!
 	Command being timed: "./merge_sort ./test_case/unsorted_1m.txt ./test_case/1m_output.txt"
-	User time (seconds): 1.01
-	System time (seconds): 0.15
-	Percent of CPU this job got: 95%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.22
+	User time (seconds): 0.82
+	System time (seconds): 0.23
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.07
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 357176
+	Maximum resident set size (kbytes): 357288
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 123353
+	Minor (reclaiming a frame) page faults: 123360
 	Voluntary context switches: 4
-	Involuntary context switches: 2
+	Involuntary context switches: 1
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -31,25 +31,25 @@ Results from ./merge_sort w/ input file: unsorted_1m.txt is Valid.
 ------------------------------------
 Results from ./merge_sort w/ input file: sorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 917 ms
-Sorting time: 774 ms
+Elapsed time: 809 ms
+Sorting time: 706 ms
 
 Sorted!
 	Command being timed: "./merge_sort ./test_case/sorted_1m.txt ./test_case/1m_output.txt"
-	User time (seconds): 0.85
-	System time (seconds): 0.19
-	Percent of CPU this job got: 95%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.10
+	User time (seconds): 0.74
+	System time (seconds): 0.21
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.98
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 357256
+	Maximum resident set size (kbytes): 357248
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 122962
+	Minor (reclaiming a frame) page faults: 123354
 	Voluntary context switches: 4
-	Involuntary context switches: 2
+	Involuntary context switches: 0
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -62,25 +62,25 @@ Results from ./merge_sort w/ input file: sorted_1m.txt is Valid.
 ------------------------------------
 Results from ./merge_sort w/ input file: partially_sorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 898 ms
-Sorting time: 768 ms
+Elapsed time: 833 ms
+Sorting time: 726 ms
 
 Sorted!
 	Command being timed: "./merge_sort ./test_case/partially_sorted_1m.txt ./test_case/partially_1m_output.txt"
-	User time (seconds): 0.92
-	System time (seconds): 0.10
-	Percent of CPU this job got: 95%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.07
+	User time (seconds): 0.82
+	System time (seconds): 0.15
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.99
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 357288
+	Maximum resident set size (kbytes): 357220
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
 	Minor (reclaiming a frame) page faults: 123378
-	Voluntary context switches: 3
-	Involuntary context switches: 2
+	Voluntary context switches: 5
+	Involuntary context switches: 5
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -93,25 +93,25 @@ Results from ./merge_sort w/ input file: partially_sorted_1m.txt is Valid.
 ------------------------------------
 Results from ./merge_sort w/ input file: dup_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 814 ms
-Sorting time: 728 ms
+Elapsed time: 765 ms
+Sorting time: 689 ms
 
 Sorted!
 	Command being timed: "./merge_sort ./test_case/dup_1m.txt ./test_case/dup_1m_output.txt"
-	User time (seconds): 0.75
+	User time (seconds): 0.72
 	System time (seconds): 0.18
-	Percent of CPU this job got: 95%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.98
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.93
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 357184
+	Maximum resident set size (kbytes): 357196
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 123357
-	Voluntary context switches: 4
-	Involuntary context switches: 27
+	Minor (reclaiming a frame) page faults: 123355
+	Voluntary context switches: 5
+	Involuntary context switches: 2
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 3912
@@ -124,25 +124,25 @@ Results from ./merge_sort w/ input file: dup_1m.txt is Valid.
 ------------------------------------
 Results from ./merge_sort w/ input file: descend_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 837 ms
-Sorting time: 719 ms
+Elapsed time: 776 ms
+Sorting time: 676 ms
 
 Sorted!
 	Command being timed: "./merge_sort ./test_case/descend_1m.txt ./test_case/descend_1m_output.txt"
-	User time (seconds): 0.79
+	User time (seconds): 0.73
 	System time (seconds): 0.18
-	Percent of CPU this job got: 95%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.02
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.94
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 357248
+	Maximum resident set size (kbytes): 357196
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 123378
+	Minor (reclaiming a frame) page faults: 123379
 	Voluntary context switches: 4
-	Involuntary context switches: 3
+	Involuntary context switches: 0
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -155,25 +155,25 @@ Results from ./merge_sort w/ input file: descend_1m.txt is Valid.
 ------------------------------------
 Results from ./heap_sort w/ input file: unsorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 287 ms
-Sorting time: 157 ms
+Elapsed time: 246 ms
+Sorting time: 125 ms
 
 Sorted!
 	Command being timed: "./heap_sort ./test_case/unsorted_1m.txt ./test_case/1m_output.txt"
-	User time (seconds): 0.27
+	User time (seconds): 0.24
 	System time (seconds): 0.00
-	Percent of CPU this job got: 95%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.29
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.25
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11072
+	Maximum resident set size (kbytes): 11064
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
 	Minor (reclaiming a frame) page faults: 2184
 	Voluntary context switches: 3
-	Involuntary context switches: 1
+	Involuntary context switches: 23
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -186,23 +186,23 @@ Results from ./heap_sort w/ input file: unsorted_1m.txt is Valid.
 ------------------------------------
 Results from ./heap_sort w/ input file: sorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 212 ms
-Sorting time: 98 ms
+Elapsed time: 208 ms
+Sorting time: 93 ms
 
 Sorted!
 	Command being timed: "./heap_sort ./test_case/sorted_1m.txt ./test_case/1m_output.txt"
-	User time (seconds): 0.20
-	System time (seconds): 0.00
-	Percent of CPU this job got: 95%
+	User time (seconds): 0.18
+	System time (seconds): 0.02
+	Percent of CPU this job got: 97%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.21
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11112
+	Maximum resident set size (kbytes): 11176
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 1684
+	Minor (reclaiming a frame) page faults: 2186
 	Voluntary context switches: 4
 	Involuntary context switches: 0
 	Swaps: 0
@@ -217,24 +217,24 @@ Results from ./heap_sort w/ input file: sorted_1m.txt is Valid.
 ------------------------------------
 Results from ./heap_sort w/ input file: partially_sorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 245 ms
-Sorting time: 121 ms
+Elapsed time: 234 ms
+Sorting time: 112 ms
 
 Sorted!
 	Command being timed: "./heap_sort ./test_case/partially_sorted_1m.txt ./test_case/partially_1m_output.txt"
-	User time (seconds): 0.21
-	System time (seconds): 0.02
-	Percent of CPU this job got: 95%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.25
+	User time (seconds): 0.22
+	System time (seconds): 0.00
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.24
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11148
+	Maximum resident set size (kbytes): 11132
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2204
-	Voluntary context switches: 4
+	Minor (reclaiming a frame) page faults: 1696
+	Voluntary context switches: 3
 	Involuntary context switches: 1
 	Swaps: 0
 	File system inputs: 0
@@ -248,24 +248,24 @@ Results from ./heap_sort w/ input file: partially_sorted_1m.txt is Valid.
 ------------------------------------
 Results from ./heap_sort w/ input file: dup_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 86 ms
-Sorting time: 8 ms
+Elapsed time: 73 ms
+Sorting time: 7 ms
 
 Sorted!
 	Command being timed: "./heap_sort ./test_case/dup_1m.txt ./test_case/dup_1m_output.txt"
-	User time (seconds): 0.07
+	User time (seconds): 0.06
 	System time (seconds): 0.00
-	Percent of CPU this job got: 94%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.09
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.07
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11152
+	Maximum resident set size (kbytes): 11096
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 1738
-	Voluntary context switches: 5
+	Minor (reclaiming a frame) page faults: 2181
+	Voluntary context switches: 3
 	Involuntary context switches: 0
 	Swaps: 0
 	File system inputs: 0
@@ -279,25 +279,25 @@ Results from ./heap_sort w/ input file: dup_1m.txt is Valid.
 ------------------------------------
 Results from ./heap_sort w/ input file: descend_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 223 ms
-Sorting time: 109 ms
+Elapsed time: 201 ms
+Sorting time: 96 ms
 
 Sorted!
 	Command being timed: "./heap_sort ./test_case/descend_1m.txt ./test_case/descend_1m_output.txt"
-	User time (seconds): 0.21
-	System time (seconds): 0.00
-	Percent of CPU this job got: 95%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.22
+	User time (seconds): 0.18
+	System time (seconds): 0.02
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.20
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11168
+	Maximum resident set size (kbytes): 11196
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2205
-	Voluntary context switches: 5
-	Involuntary context switches: 1
+	Minor (reclaiming a frame) page faults: 2209
+	Voluntary context switches: 3
+	Involuntary context switches: 0
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -310,25 +310,25 @@ Results from ./heap_sort w/ input file: descend_1m.txt is Valid.
 ------------------------------------
 Results from ./bubble_sort w/ input file: unsorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 1710372 ms
-Sorting time: 1710255 ms
+Elapsed time: 1721717 ms
+Sorting time: 1721594 ms
 
 Sorted!
 	Command being timed: "./bubble_sort ./test_case/unsorted_1m.txt ./test_case/1m_output.txt"
-	User time (seconds): 1710.79
-	System time (seconds): 0.03
+	User time (seconds): 1722.02
+	System time (seconds): 0.01
 	Percent of CPU this job got: 100%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 28:30.37
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 28:41.72
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 20472
+	Maximum resident set size (kbytes): 18396
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2180
-	Voluntary context switches: 2
-	Involuntary context switches: 79
+	Minor (reclaiming a frame) page faults: 2176
+	Voluntary context switches: 4
+	Involuntary context switches: 57
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -341,25 +341,25 @@ Results from ./bubble_sort w/ input file: unsorted_1m.txt is Valid.
 ------------------------------------
 Results from ./bubble_sort w/ input file: sorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 769710 ms
-Sorting time: 769514 ms
+Elapsed time: 726029 ms
+Sorting time: 725923 ms
 
 Sorted!
 	Command being timed: "./bubble_sort ./test_case/sorted_1m.txt ./test_case/1m_output.txt"
-	User time (seconds): 768.64
-	System time (seconds): 0.18
-	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 12:49.72
+	User time (seconds): 726.10
+	System time (seconds): 0.02
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 12:06.03
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11108
+	Maximum resident set size (kbytes): 11164
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2183
-	Voluntary context switches: 3
-	Involuntary context switches: 385
+	Minor (reclaiming a frame) page faults: 2184
+	Voluntary context switches: 4
+	Involuntary context switches: 5
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -372,25 +372,25 @@ Results from ./bubble_sort w/ input file: sorted_1m.txt is Valid.
 ------------------------------------
 Results from ./bubble_sort w/ input file: partially_sorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 1220095 ms
-Sorting time: 1219795 ms
+Elapsed time: 1190661 ms
+Sorting time: 1190541 ms
 
 Sorted!
 	Command being timed: "./bubble_sort ./test_case/partially_sorted_1m.txt ./test_case/partially_1m_output.txt"
-	User time (seconds): 1220.85
-	System time (seconds): 0.22
+	User time (seconds): 1190.62
+	System time (seconds): 0.04
 	Percent of CPU this job got: 100%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 20:20.11
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 19:50.66
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 18568
+	Maximum resident set size (kbytes): 18512
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2203
+	Minor (reclaiming a frame) page faults: 2207
 	Voluntary context switches: 4
-	Involuntary context switches: 9
+	Involuntary context switches: 7
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -403,25 +403,25 @@ Results from ./bubble_sort w/ input file: partially_sorted_1m.txt is Valid.
 ------------------------------------
 Results from ./bubble_sort w/ input file: dup_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 738283 ms
-Sorting time: 738182 ms
+Elapsed time: 723746 ms
+Sorting time: 723667 ms
 
 Sorted!
 	Command being timed: "./bubble_sort ./test_case/dup_1m.txt ./test_case/dup_1m_output.txt"
-	User time (seconds): 737.26
+	User time (seconds): 723.77
 	System time (seconds): 0.02
-	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 12:18.29
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 12:03.75
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11076
+	Maximum resident set size (kbytes): 11100
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2181
+	Minor (reclaiming a frame) page faults: 2183
 	Voluntary context switches: 3
-	Involuntary context switches: 5
+	Involuntary context switches: 6
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 3912
@@ -434,25 +434,25 @@ Results from ./bubble_sort w/ input file: dup_1m.txt is Valid.
 ------------------------------------
 Results from ./bubble_sort w/ input file: descend_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 763571 ms
-Sorting time: 763032 ms
+Elapsed time: 732449 ms
+Sorting time: 732328 ms
 
 Sorted!
 	Command being timed: "./bubble_sort ./test_case/descend_1m.txt ./test_case/descend_1m_output.txt"
-	User time (seconds): 763.29
-	System time (seconds): 0.45
-	Percent of CPU this job got: 100%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 12:43.57
+	User time (seconds): 731.96
+	System time (seconds): 0.03
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 12:12.45
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 20300
+	Maximum resident set size (kbytes): 18524
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2202
+	Minor (reclaiming a frame) page faults: 2200
 	Voluntary context switches: 4
-	Involuntary context switches: 11
+	Involuntary context switches: 7
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -465,25 +465,25 @@ Results from ./bubble_sort w/ input file: descend_1m.txt is Valid.
 ------------------------------------
 Results from ./insertion_sort w/ input file: unsorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 312492 ms
-Sorting time: 312224 ms
+Elapsed time: 302823 ms
+Sorting time: 302693 ms
 
 Sorted!
 	Command being timed: "./insertion_sort ./test_case/unsorted_1m.txt ./test_case/1m_output.txt"
-	User time (seconds): 312.32
-	System time (seconds): 0.17
-	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:12.50
+	User time (seconds): 303.37
+	System time (seconds): 0.04
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:02.82
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11116
+	Maximum resident set size (kbytes): 11008
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 1670
+	Minor (reclaiming a frame) page faults: 2183
 	Voluntary context switches: 5
-	Involuntary context switches: 18
+	Involuntary context switches: 5
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -496,25 +496,25 @@ Results from ./insertion_sort w/ input file: unsorted_1m.txt is Valid.
 ------------------------------------
 Results from ./insertion_sort w/ input file: sorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 199 ms
+Elapsed time: 108 ms
 Sorting time: 1 ms
 
 Sorted!
 	Command being timed: "./insertion_sort ./test_case/sorted_1m.txt ./test_case/1m_output.txt"
-	User time (seconds): 0.12
-	System time (seconds): 0.08
-	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.20
+	User time (seconds): 0.08
+	System time (seconds): 0.02
+	Percent of CPU this job got: 96%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.11
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11132
+	Maximum resident set size (kbytes): 11016
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2183
+	Minor (reclaiming a frame) page faults: 1739
 	Voluntary context switches: 3
-	Involuntary context switches: 1
+	Involuntary context switches: 0
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -527,24 +527,24 @@ Results from ./insertion_sort w/ input file: sorted_1m.txt is Valid.
 ------------------------------------
 Results from ./insertion_sort w/ input file: partially_sorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 248803 ms
-Sorting time: 248618 ms
+Elapsed time: 227546 ms
+Sorting time: 227435 ms
 
 Sorted!
 	Command being timed: "./insertion_sort ./test_case/partially_sorted_1m.txt ./test_case/partially_1m_output.txt"
-	User time (seconds): 248.72
-	System time (seconds): 0.07
+	User time (seconds): 227.48
+	System time (seconds): 0.01
 	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:08.80
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:47.55
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11176
+	Maximum resident set size (kbytes): 11156
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2203
-	Voluntary context switches: 5
+	Minor (reclaiming a frame) page faults: 1738
+	Voluntary context switches: 4
 	Involuntary context switches: 5
 	Swaps: 0
 	File system inputs: 0
@@ -558,25 +558,25 @@ Results from ./insertion_sort w/ input file: partially_sorted_1m.txt is Valid.
 ------------------------------------
 Results from ./insertion_sort w/ input file: dup_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 76 ms
-Sorting time: 2 ms
+Elapsed time: 74 ms
+Sorting time: 1 ms
 
 Sorted!
 	Command being timed: "./insertion_sort ./test_case/dup_1m.txt ./test_case/dup_1m_output.txt"
-	User time (seconds): 0.08
+	User time (seconds): 0.07
 	System time (seconds): 0.00
-	Percent of CPU this job got: 100%
+	Percent of CPU this job got: 97%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.08
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11064
+	Maximum resident set size (kbytes): 11016
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2178
+	Minor (reclaiming a frame) page faults: 2179
 	Voluntary context switches: 4
-	Involuntary context switches: 1
+	Involuntary context switches: 0
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 3912
@@ -589,25 +589,25 @@ Results from ./insertion_sort w/ input file: dup_1m.txt is Valid.
 ------------------------------------
 Results from ./insertion_sort w/ input file: descend_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 637071 ms
-Sorting time: 636957 ms
+Elapsed time: 607033 ms
+Sorting time: 606928 ms
 
 Sorted!
 	Command being timed: "./insertion_sort ./test_case/descend_1m.txt ./test_case/descend_1m_output.txt"
-	User time (seconds): 637.17
-	System time (seconds): 0.00
-	Percent of CPU this job got: 100%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 10:37.07
+	User time (seconds): 606.89
+	System time (seconds): 0.01
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 10:07.03
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11204
+	Maximum resident set size (kbytes): 11028
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2206
+	Minor (reclaiming a frame) page faults: 2204
 	Voluntary context switches: 4
-	Involuntary context switches: 6
+	Involuntary context switches: 5
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -620,25 +620,25 @@ Results from ./insertion_sort w/ input file: descend_1m.txt is Valid.
 ------------------------------------
 Results from ./selection_sort w/ input file: unsorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 1430752 ms
-Sorting time: 1430603 ms
+Elapsed time: 1412757 ms
+Sorting time: 1412643 ms
 
 Sorted!
 	Command being timed: "./selection_sort ./test_case/unsorted_1m.txt ./test_case/1m_output.txt"
-	User time (seconds): 1430.89
-	System time (seconds): 0.06
+	User time (seconds): 1412.90
+	System time (seconds): 0.02
 	Percent of CPU this job got: 100%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 23:50.76
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 23:32.76
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 20548
+	Maximum resident set size (kbytes): 19796
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2178
+	Minor (reclaiming a frame) page faults: 1767
 	Voluntary context switches: 5
-	Involuntary context switches: 399
+	Involuntary context switches: 356
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -651,27 +651,27 @@ Results from ./selection_sort w/ input file: unsorted_1m.txt is Valid.
 ------------------------------------
 Results from ./selection_sort w/ input file: sorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 455108 ms
-Sorting time: 454967 ms
+Elapsed time: 422715 ms
+Sorting time: 422610 ms
 
 Sorted!
 	Command being timed: "./selection_sort ./test_case/sorted_1m.txt ./test_case/1m_output.txt"
-	User time (seconds): 455.54
-	System time (seconds): 0.03
+	User time (seconds): 422.73
+	System time (seconds): 0.02
 	Percent of CPU this job got: 100%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:35.11
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:02.72
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 18368
+	Maximum resident set size (kbytes): 11004
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2179
-	Voluntary context switches: 4
-	Involuntary context switches: 155
+	Minor (reclaiming a frame) page faults: 1735
+	Voluntary context switches: 5
+	Involuntary context switches: 5
 	Swaps: 0
-	File system inputs: 0
+	File system inputs: 40
 	File system outputs: 21456
 	Socket messages sent: 0
 	Socket messages received: 0
@@ -682,25 +682,25 @@ Results from ./selection_sort w/ input file: sorted_1m.txt is Valid.
 ------------------------------------
 Results from ./selection_sort w/ input file: partially_sorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 1319996 ms
-Sorting time: 1319834 ms
+Elapsed time: 1175284 ms
+Sorting time: 1174989 ms
 
 Sorted!
 	Command being timed: "./selection_sort ./test_case/partially_sorted_1m.txt ./test_case/partially_1m_output.txt"
-	User time (seconds): 1319.20
-	System time (seconds): 0.08
+	User time (seconds): 1174.63
+	System time (seconds): 0.15
 	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 22:00.00
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 19:35.32
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11100
+	Maximum resident set size (kbytes): 20144
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 1729
+	Minor (reclaiming a frame) page faults: 1706
 	Voluntary context switches: 4
-	Involuntary context switches: 13
+	Involuntary context switches: 53
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -713,27 +713,27 @@ Results from ./selection_sort w/ input file: partially_sorted_1m.txt is Valid.
 ------------------------------------
 Results from ./selection_sort w/ input file: dup_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 490601 ms
-Sorting time: 490498 ms
+Elapsed time: 451989 ms
+Sorting time: 451845 ms
 
 Sorted!
 	Command being timed: "./selection_sort ./test_case/dup_1m.txt ./test_case/dup_1m_output.txt"
-	User time (seconds): 490.84
-	System time (seconds): 0.02
+	User time (seconds): 452.21
+	System time (seconds): 0.13
 	Percent of CPU this job got: 100%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:10.60
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:32.04
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 19964
+	Maximum resident set size (kbytes): 11108
 	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 1747
-	Voluntary context switches: 5
-	Involuntary context switches: 56
+	Major (requiring I/O) page faults: 4
+	Minor (reclaiming a frame) page faults: 2184
+	Voluntary context switches: 7
+	Involuntary context switches: 40
 	Swaps: 0
-	File system inputs: 0
+	File system inputs: 304
 	File system outputs: 3912
 	Socket messages sent: 0
 	Socket messages received: 0
@@ -744,25 +744,25 @@ Results from ./selection_sort w/ input file: dup_1m.txt is Valid.
 ------------------------------------
 Results from ./selection_sort w/ input file: descend_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 854652 ms
-Sorting time: 854246 ms
+Elapsed time: 832394 ms
+Sorting time: 832210 ms
 
 Sorted!
 	Command being timed: "./selection_sort ./test_case/descend_1m.txt ./test_case/descend_1m_output.txt"
-	User time (seconds): 853.61
-	System time (seconds): 0.39
+	User time (seconds): 832.03
+	System time (seconds): 0.05
 	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 14:14.66
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:52.40
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 11188
+	Maximum resident set size (kbytes): 11160
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 2205
-	Voluntary context switches: 3
-	Involuntary context switches: 178
+	Minor (reclaiming a frame) page faults: 2203
+	Voluntary context switches: 4
+	Involuntary context switches: 25
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -775,27 +775,27 @@ Results from ./selection_sort w/ input file: descend_1m.txt is Valid.
 ------------------------------------
 Results from ./quick_sort w/ input file: unsorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 5813 ms
-Sorting time: 5678 ms
+Elapsed time: 6411 ms
+Sorting time: 6145 ms
 
 Sorted!
 	Command being timed: "./quick_sort ./test_case/unsorted_1m.txt ./test_case/1m_output.txt"
-	User time (seconds): 6.57
-	System time (seconds): 0.79
-	Percent of CPU this job got: 119%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.17
+	User time (seconds): 8.24
+	System time (seconds): 0.76
+	Percent of CPU this job got: 106%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.49
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 772500
+	Maximum resident set size (kbytes): 773292
 	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 210965
-	Voluntary context switches: 4
-	Involuntary context switches: 44
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 211043
+	Voluntary context switches: 5
+	Involuntary context switches: 9
 	Swaps: 0
-	File system inputs: 0
+	File system inputs: 192
 	File system outputs: 21456
 	Socket messages sent: 0
 	Socket messages received: 0
@@ -806,25 +806,25 @@ Results from ./quick_sort w/ input file: unsorted_1m.txt is Valid.
 ------------------------------------
 Results from ./quick_sort w/ input file: sorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 3649 ms
-Sorting time: 3428 ms
+Elapsed time: 4209 ms
+Sorting time: 3960 ms
 
 Sorted!
 	Command being timed: "./quick_sort ./test_case/sorted_1m.txt ./test_case/1m_output.txt"
-	User time (seconds): 4.65
-	System time (seconds): 0.38
-	Percent of CPU this job got: 95%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.29
+	User time (seconds): 5.35
+	System time (seconds): 0.41
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.89
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 598992
+	Maximum resident set size (kbytes): 599024
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 159826
+	Minor (reclaiming a frame) page faults: 160266
 	Voluntary context switches: 3
-	Involuntary context switches: 5
+	Involuntary context switches: 8
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -837,25 +837,25 @@ Results from ./quick_sort w/ input file: sorted_1m.txt is Valid.
 ------------------------------------
 Results from ./quick_sort w/ input file: partially_sorted_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 4863 ms
-Sorting time: 4661 ms
+Elapsed time: 5433 ms
+Sorting time: 5241 ms
 
 Sorted!
 	Command being timed: "./quick_sort ./test_case/partially_sorted_1m.txt ./test_case/partially_1m_output.txt"
-	User time (seconds): 6.12
-	System time (seconds): 0.41
-	Percent of CPU this job got: 95%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.87
+	User time (seconds): 6.85
+	System time (seconds): 0.33
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.34
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 697112
+	Maximum resident set size (kbytes): 696904
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 186262
+	Minor (reclaiming a frame) page faults: 186213
 	Voluntary context switches: 3
-	Involuntary context switches: 13
+	Involuntary context switches: 6
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456
@@ -868,25 +868,25 @@ Results from ./quick_sort w/ input file: partially_sorted_1m.txt is Valid.
 ------------------------------------
 Results from ./quick_sort w/ input file: dup_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 95 ms
+Elapsed time: 86 ms
 Sorting time: 12 ms
 
 Sorted!
 	Command being timed: "./quick_sort ./test_case/dup_1m.txt ./test_case/dup_1m_output.txt"
 	User time (seconds): 0.07
 	System time (seconds): 0.01
-	Percent of CPU this job got: 95%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.10
+	Percent of CPU this job got: 96%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.09
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 20572
+	Maximum resident set size (kbytes): 20516
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 4603
-	Voluntary context switches: 4
-	Involuntary context switches: 1
+	Minor (reclaiming a frame) page faults: 4599
+	Voluntary context switches: 5
+	Involuntary context switches: 0
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 3912
@@ -899,25 +899,25 @@ Results from ./quick_sort w/ input file: dup_1m.txt is Valid.
 ------------------------------------
 Results from ./quick_sort w/ input file: descend_1m.txt:
 Processed data has been written to 'output.txt'.
-Elapsed time: 3681 ms
-Sorting time: 3538 ms
+Elapsed time: 4131 ms
+Sorting time: 4026 ms
 
 Sorted!
 	Command being timed: "./quick_sort ./test_case/descend_1m.txt ./test_case/descend_1m_output.txt"
-	User time (seconds): 4.75
-	System time (seconds): 0.25
-	Percent of CPU this job got: 95%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.26
+	User time (seconds): 5.30
+	System time (seconds): 0.28
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.72
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 598996
+	Maximum resident set size (kbytes): 599008
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 160774
+	Minor (reclaiming a frame) page faults: 160777
 	Voluntary context switches: 3
-	Involuntary context switches: 10
+	Involuntary context switches: 7
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 21456

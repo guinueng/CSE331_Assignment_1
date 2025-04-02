@@ -1,0 +1,930 @@
+Results from ./merge_sort w/ input file: unsorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 89 ms
+Sorting time: 78 ms
+
+Sorted!
+	Command being timed: "./merge_sort ./test_case/unsorted_100k.txt ./test_case/100k_output.txt"
+	User time (seconds): 0.07
+	System time (seconds): 0.03
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 43096
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 14384
+	Voluntary context switches: 4
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./merge_sort w/ input file: unsorted_100k.txt is Valid.
+------------------------------------
+Results from ./merge_sort w/ input file: sorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 88 ms
+Sorting time: 77 ms
+
+Sorted!
+	Command being timed: "./merge_sort ./test_case/sorted_100k.txt ./test_case/100k_output.txt"
+	User time (seconds): 0.09
+	System time (seconds): 0.01
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 42892
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 14382
+	Voluntary context switches: 3
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./merge_sort w/ input file: sorted_100k.txt is Valid.
+------------------------------------
+Results from ./merge_sort w/ input file: partially_sorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 91 ms
+Sorting time: 80 ms
+
+Sorted!
+	Command being timed: "./merge_sort ./test_case/partially_sorted_100k.txt ./test_case/partially_100k_output.txt"
+	User time (seconds): 0.10
+	System time (seconds): 0.01
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 42956
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 14403
+	Voluntary context switches: 4
+	Involuntary context switches: 1
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./merge_sort w/ input file: partially_sorted_100k.txt is Valid.
+------------------------------------
+Results from ./merge_sort w/ input file: dup_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 88 ms
+Sorting time: 80 ms
+
+Sorted!
+	Command being timed: "./merge_sort ./test_case/dup_100k.txt ./test_case/dup_100k_output.txt"
+	User time (seconds): 0.09
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 42984
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 13956
+	Voluntary context switches: 4
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 392
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./merge_sort w/ input file: dup_100k.txt is Valid.
+------------------------------------
+Results from ./merge_sort w/ input file: descend_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 87 ms
+Sorting time: 76 ms
+
+Sorted!
+	Command being timed: "./merge_sort ./test_case/descend_100k.txt ./test_case/descend_100k_output.txt"
+	User time (seconds): 0.07
+	System time (seconds): 0.03
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 43020
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 14401
+	Voluntary context switches: 3
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./merge_sort w/ input file: descend_100k.txt is Valid.
+------------------------------------
+Results from ./heap_sort w/ input file: unsorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 20 ms
+Sorting time: 8 ms
+
+Sorted!
+	Command being timed: "./heap_sort ./test_case/unsorted_100k.txt ./test_case/100k_output.txt"
+	User time (seconds): 0.01
+	System time (seconds): 0.00
+	Percent of CPU this job got: 95%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7536
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1340
+	Voluntary context switches: 4
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./heap_sort w/ input file: unsorted_100k.txt is Valid.
+------------------------------------
+Results from ./heap_sort w/ input file: sorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 17 ms
+Sorting time: 7 ms
+
+Sorted!
+	Command being timed: "./heap_sort ./test_case/sorted_100k.txt ./test_case/100k_output.txt"
+	User time (seconds): 0.02
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7480
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1703
+	Voluntary context switches: 3
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./heap_sort w/ input file: sorted_100k.txt is Valid.
+------------------------------------
+Results from ./heap_sort w/ input file: partially_sorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 18 ms
+Sorting time: 7 ms
+
+Sorted!
+	Command being timed: "./heap_sort ./test_case/partially_sorted_100k.txt ./test_case/partially_100k_output.txt"
+	User time (seconds): 0.02
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7564
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1730
+	Voluntary context switches: 4
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./heap_sort w/ input file: partially_sorted_100k.txt is Valid.
+------------------------------------
+Results from ./heap_sort w/ input file: dup_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 11 ms
+Sorting time: 4 ms
+
+Sorted!
+	Command being timed: "./heap_sort ./test_case/dup_100k.txt ./test_case/dup_100k_output.txt"
+	User time (seconds): 0.01
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7488
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1704
+	Voluntary context switches: 4
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 392
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./heap_sort w/ input file: dup_100k.txt is Valid.
+------------------------------------
+Results from ./heap_sort w/ input file: descend_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 20 ms
+Sorting time: 7 ms
+
+Sorted!
+	Command being timed: "./heap_sort ./test_case/descend_100k.txt ./test_case/descend_100k_output.txt"
+	User time (seconds): 0.00
+	System time (seconds): 0.01
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7560
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1730
+	Voluntary context switches: 4
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./heap_sort w/ input file: descend_100k.txt is Valid.
+------------------------------------
+Results from ./bubble_sort w/ input file: unsorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 14490 ms
+Sorting time: 14477 ms
+
+Sorted!
+	Command being timed: "./bubble_sort ./test_case/unsorted_100k.txt ./test_case/100k_output.txt"
+	User time (seconds): 14.49
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.49
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7536
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1706
+	Voluntary context switches: 3
+	Involuntary context switches: 5
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./bubble_sort w/ input file: unsorted_100k.txt is Valid.
+------------------------------------
+Results from ./bubble_sort w/ input file: sorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 6172 ms
+Sorting time: 6161 ms
+
+Sorted!
+	Command being timed: "./bubble_sort ./test_case/sorted_100k.txt ./test_case/100k_output.txt"
+	User time (seconds): 6.15
+	System time (seconds): 0.01
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7528
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1291
+	Voluntary context switches: 3
+	Involuntary context switches: 10
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./bubble_sort w/ input file: sorted_100k.txt is Valid.
+------------------------------------
+Results from ./bubble_sort w/ input file: partially_sorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 9788 ms
+Sorting time: 9777 ms
+
+Sorted!
+	Command being timed: "./bubble_sort ./test_case/partially_sorted_100k.txt ./test_case/partially_100k_output.txt"
+	User time (seconds): 9.78
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:09.79
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7556
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1730
+	Voluntary context switches: 3
+	Involuntary context switches: 8
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./bubble_sort w/ input file: partially_sorted_100k.txt is Valid.
+------------------------------------
+Results from ./bubble_sort w/ input file: dup_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 6064 ms
+Sorting time: 6056 ms
+
+Sorted!
+	Command being timed: "./bubble_sort ./test_case/dup_100k.txt ./test_case/dup_100k_output.txt"
+	User time (seconds): 6.05
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.06
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7476
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1701
+	Voluntary context switches: 4
+	Involuntary context switches: 10
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 392
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./bubble_sort w/ input file: dup_100k.txt is Valid.
+------------------------------------
+Results from ./bubble_sort w/ input file: descend_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 6093 ms
+Sorting time: 6082 ms
+
+Sorted!
+	Command being timed: "./bubble_sort ./test_case/descend_100k.txt ./test_case/descend_100k_output.txt"
+	User time (seconds): 6.08
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7512
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1728
+	Voluntary context switches: 3
+	Involuntary context switches: 5
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./bubble_sort w/ input file: descend_100k.txt is Valid.
+------------------------------------
+Results from ./insertion_sort w/ input file: unsorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 3180 ms
+Sorting time: 3169 ms
+
+Sorted!
+	Command being timed: "./insertion_sort ./test_case/unsorted_100k.txt ./test_case/100k_output.txt"
+	User time (seconds): 3.18
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.18
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7580
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1239
+	Voluntary context switches: 3
+	Involuntary context switches: 2
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./insertion_sort w/ input file: unsorted_100k.txt is Valid.
+------------------------------------
+Results from ./insertion_sort w/ input file: sorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 12 ms
+Sorting time: 0 ms
+
+Sorted!
+	Command being timed: "./insertion_sort ./test_case/sorted_100k.txt ./test_case/100k_output.txt"
+	User time (seconds): 0.01
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7520
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1709
+	Voluntary context switches: 3
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./insertion_sort w/ input file: sorted_100k.txt is Valid.
+------------------------------------
+Results from ./insertion_sort w/ input file: partially_sorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 2288 ms
+Sorting time: 2277 ms
+
+Sorted!
+	Command being timed: "./insertion_sort ./test_case/partially_sorted_100k.txt ./test_case/partially_100k_output.txt"
+	User time (seconds): 2.29
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7564
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1266
+	Voluntary context switches: 3
+	Involuntary context switches: 6
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./insertion_sort w/ input file: partially_sorted_100k.txt is Valid.
+------------------------------------
+Results from ./insertion_sort w/ input file: dup_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 7 ms
+Sorting time: 0 ms
+
+Sorted!
+	Command being timed: "./insertion_sort ./test_case/dup_100k.txt ./test_case/dup_100k_output.txt"
+	User time (seconds): 0.01
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7484
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1705
+	Voluntary context switches: 3
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 392
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./insertion_sort w/ input file: dup_100k.txt is Valid.
+------------------------------------
+Results from ./insertion_sort w/ input file: descend_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 6097 ms
+Sorting time: 6086 ms
+
+Sorted!
+	Command being timed: "./insertion_sort ./test_case/descend_100k.txt ./test_case/descend_100k_output.txt"
+	User time (seconds): 6.09
+	System time (seconds): 0.01
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7644
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1304
+	Voluntary context switches: 3
+	Involuntary context switches: 3
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./insertion_sort w/ input file: descend_100k.txt is Valid.
+------------------------------------
+Results from ./selection_sort w/ input file: unsorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 13383 ms
+Sorting time: 13369 ms
+
+Sorted!
+	Command being timed: "./selection_sort ./test_case/unsorted_100k.txt ./test_case/100k_output.txt"
+	User time (seconds): 13.38
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.38
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7616
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1704
+	Voluntary context switches: 4
+	Involuntary context switches: 5
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./selection_sort w/ input file: unsorted_100k.txt is Valid.
+------------------------------------
+Results from ./selection_sort w/ input file: sorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 3677 ms
+Sorting time: 3667 ms
+
+Sorted!
+	Command being timed: "./selection_sort ./test_case/sorted_100k.txt ./test_case/100k_output.txt"
+	User time (seconds): 3.68
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7428
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1707
+	Voluntary context switches: 3
+	Involuntary context switches: 5
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./selection_sort w/ input file: sorted_100k.txt is Valid.
+------------------------------------
+Results from ./selection_sort w/ input file: partially_sorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 10489 ms
+Sorting time: 10477 ms
+
+Sorted!
+	Command being timed: "./selection_sort ./test_case/partially_sorted_100k.txt ./test_case/partially_100k_output.txt"
+	User time (seconds): 10.49
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.49
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7580
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1358
+	Voluntary context switches: 3
+	Involuntary context switches: 15
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./selection_sort w/ input file: partially_sorted_100k.txt is Valid.
+------------------------------------
+Results from ./selection_sort w/ input file: dup_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 3678 ms
+Sorting time: 3671 ms
+
+Sorted!
+	Command being timed: "./selection_sort ./test_case/dup_100k.txt ./test_case/dup_100k_output.txt"
+	User time (seconds): 3.68
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7632
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1711
+	Voluntary context switches: 3
+	Involuntary context switches: 3
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 392
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./selection_sort w/ input file: dup_100k.txt is Valid.
+------------------------------------
+Results from ./selection_sort w/ input file: descend_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 7875 ms
+Sorting time: 7864 ms
+
+Sorted!
+	Command being timed: "./selection_sort ./test_case/descend_100k.txt ./test_case/descend_100k_output.txt"
+	User time (seconds): 7.87
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.88
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7552
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1727
+	Voluntary context switches: 3
+	Involuntary context switches: 3
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./selection_sort w/ input file: descend_100k.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: unsorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 210 ms
+Sorting time: 198 ms
+
+Sorted!
+	Command being timed: "./quick_sort ./test_case/unsorted_100k.txt ./test_case/100k_output.txt"
+	User time (seconds): 0.25
+	System time (seconds): 0.08
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.33
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 89912
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 24505
+	Voluntary context switches: 4
+	Involuntary context switches: 1
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./quick_sort w/ input file: unsorted_100k.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: sorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 160 ms
+Sorting time: 149 ms
+
+Sorted!
+	Command being timed: "./quick_sort ./test_case/sorted_100k.txt ./test_case/100k_output.txt"
+	User time (seconds): 0.25
+	System time (seconds): 0.02
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.27
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 77296
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 20733
+	Voluntary context switches: 4
+	Involuntary context switches: 2
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./quick_sort w/ input file: sorted_100k.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: partially_sorted_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 183 ms
+Sorting time: 173 ms
+
+Sorted!
+	Command being timed: "./quick_sort ./test_case/partially_sorted_100k.txt ./test_case/partially_100k_output.txt"
+	User time (seconds): 0.29
+	System time (seconds): 0.01
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 80904
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 21893
+	Voluntary context switches: 4
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./quick_sort w/ input file: partially_sorted_100k.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: dup_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 8 ms
+Sorting time: 2 ms
+
+Sorted!
+	Command being timed: "./quick_sort ./test_case/dup_100k.txt ./test_case/dup_100k_output.txt"
+	User time (seconds): 0.00
+	System time (seconds): 0.01
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9732
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1937
+	Voluntary context switches: 3
+	Involuntary context switches: 1
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 392
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./quick_sort w/ input file: dup_100k.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: descend_100k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 176 ms
+Sorting time: 166 ms
+
+Sorted!
+	Command being timed: "./quick_sort ./test_case/descend_100k.txt ./test_case/descend_100k_output.txt"
+	User time (seconds): 0.26
+	System time (seconds): 0.02
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.28
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 77380
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 20875
+	Voluntary context switches: 4
+	Involuntary context switches: 1
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./quick_sort w/ input file: descend_100k.txt is Valid.
+------------------------------------

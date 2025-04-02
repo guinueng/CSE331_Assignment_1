@@ -166,49 +166,62 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
 
         }
 
-        while (i < original) arr[k++] = left[i++];
+        while (i < len1) arr[k++] = left[i++];
         // while (j < len2) arr[k++] = right[j++];
     }
-    else{ // Input bigger one first to use one array(in-place) method.
+    else{ // Input bigger one first to use one array(in-place) method.-------------------------------------------------------------------------------->
         std::cout << "small one is right\n";
         std::vector<int> right(len2);
         std::copy(arr.begin() + m + 1, arr.begin() + r + 1, right.begin());
         k = r;
-        size_t left_limit = 0;
+        int left_limit = 0;
         int right_limit = 0;
 
         std::cout << "right[0]: " << right[0] << " arr[l]: " << arr[l] << "\n";
         if(right[0] >= arr[l]){ // pass consideration of sorting un-necessary part of front.
             left_limit = gallop_right(right[0], arr, l, len1);
+            len1 -= left_limit;
         }
         else{
             right_limit = gallop_right(arr[l], right, 0, len2);
+            len2 -= right_limit;
         }
 
         std::cout << "i: " << i << " j: " << j << " m + j + 1: " << m + j + 1 << "\n";
         std::cout << "right[len2 - 1]: " << right[len2 - 1] << " arr[m]: " << arr[m] << "\n";
 
         if(right[len2 - 1] > arr[m]){ // pass consideration of sorting un-necessary part of back.
-            original = len1;
-            len1 = gallop_left(right[len2 - 1], arr, l, len1) - l;
+            //original = len1;
+            len2 = gallop_left(right[len2 - 1], arr, l, len1) - l;
+            k = m + len2;
         }
         else{
-            len2 = gallop_left(arr[m], right, 0, len2);
-            k = m + len2;
+            original = len1;
+            len1 = gallop_left(arr[m], right, 0, len2);
+            for(size_t tmp = original - 1; tmp >= len1; tmp++){
+                arr[k--] = arr[l + tmp];
+            }
         }
 
         std::cout << "len1: " << len1 << " len2: " << len2 << "\n";
         size_t cnt = 0;
         size_t trial = 1;
-        while (i < (len1 - left_limit) && j < (len2 - right_limit)) {
-            std::cout << "\n\nwhile_loop " << trial++ <<"th\n";
-            // for(auto j : arr){
-            //     std::cout << j << " ";
-            //     cnt++;
-            //     if(cnt % 12 == 0){
-            //         std::cout << "\n";
-            //     }
-            // }
+        while (i < len1 && j < (len2 - right_limit)) {
+            std::cout << "\n\nwhile_loop " << trial++ <<"th\n\narray:\n";
+            for(size_t tmp = l; tmp < r; tmp++){
+                std::cout << arr[tmp] << " ";
+                // cnt++;
+                if((tmp - l + 1) % 12 == 0){
+                    std::cout << "\n";
+                }
+            }
+            std::cout << "\nleft on right: \n";
+            for(size_t tmp = right_limit; tmp < len2 - j; tmp++){
+                std::cout << right[tmp] << " ";
+                if((tmp - right_limit + 1) % 12 == 0){
+                    std::cout << "\n";
+                }
+            }
             std::cout << "\ni: " << i << " j: " << j << " m + j + 1: " << m + j + 1 << "\n";
             std::cout << "left wins: " << left_wins << " right wins: " << right_wins << "\n";
 
@@ -259,10 +272,18 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
         }
         std::cout << "END\n";
         //while (i < len1) arr[k++] = left[i++];
-        while (j < len2){
-            std::cout << "right limit: " << right_limit << "j: " << j << " k: " << k << "original - j - 1: " << original - j - 1 << "\n";
-            arr.at(k--) = right.at(len2 - j - 1); j++;
-            right_limit--;
+        // while (right_limit >= 0){
+        //     // std::cout << "right limit: " << right_limit << "j: " << j << " k: " << k << " original - j - 1: " << original - j - 1 << "\n";
+        //     arr.at(k--) = right.at(right_limit);
+        //     right_limit--;
+        // }
+        for(int tmp = len2 - j - 1 ; tmp >= right_limit; tmp--){
+            std::cout << tmp << std::endl;
+            arr[k--] = right[tmp];
+            // std::cout << right[tmp] << " ";
+            // if((tmp - right_limit + 1) % 12 == 0){
+            //     std::cout << "\n";
+            // }
         }
         std::cout << "REAL END\n";
     }

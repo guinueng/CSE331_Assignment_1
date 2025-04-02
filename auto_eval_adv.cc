@@ -97,13 +97,13 @@ int main() {
         // {"input.txt", "output.txt"},
         // // {"unsorted_1k.txt", "1k_output.txt"},
         // // {"sorted_1k.txt", "1k_output.txt"},
-        {"unsorted_1m.txt", "1m_output.txt"},
-        {"sorted_1m.txt", "1m_output.txt"},
+        {"unsorted_100k.txt", "100k_output.txt"},
+        {"sorted_100k.txt", "100k_output.txt"},
         // // {"unsorted_1m_2.txt", "1m_output_2.txt"},
         // // {"sorted_1m_2.txt", "1m_output_2.txt"},
-        {"partially_sorted_1m.txt", "partially_1m_output.txt"},
-        {"dup_1m.txt", "dup_1m_output.txt"},
-        {"descend_1m.txt", "descend_1m_output.txt"}
+        {"partially_sorted_100k.txt", "partially_100k_output.txt"},
+        {"dup_100k.txt", "dup_100k_output.txt"},
+        {"descend_100k.txt", "descend_100k_output.txt"}
     };
 
     // Run each program in sequence

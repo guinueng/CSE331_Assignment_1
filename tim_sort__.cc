@@ -79,7 +79,7 @@ void insertion_sort(std::vector<int>& arr, int l, int r) { // bin insertion sort
     for (int i = l + 1; i <= r; ++i) {
         int key = arr[i];
         int j = i - 1;
-        while (j >= l && arr[j] > key) {
+        while (j >= l && arr[j] > key) { 
             arr[j + 1] = arr[j];
             j--;
         }

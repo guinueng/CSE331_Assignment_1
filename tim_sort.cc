@@ -49,30 +49,87 @@ void find_and_reverse_run(std::vector<int>& arr, int& start, int& end) {
     }
 }
 
-// 갤럽 서치 (오른쪽 방향)
-int gallop_right(int key, const std::vector<int>& arr, int base, int len) {
-    int last_offset = 0, offset = 1;
-    while (offset < len && arr[base + offset] <= key) {
-        last_offset = offset;
-        offset = (offset << 1) + 1;
+int binary_search(const std::vector<int>& arr, int l, int h, int key){
+    if(l > h){
+        return -1;
     }
-    int upper = std::min(base + offset, base + len);
-    auto pos = std::upper_bound(arr.begin() + base + last_offset,
-                               arr.begin() + upper, key); // Need to impl as bin search.
-    return pos - (arr.begin() + base);
+    if(l == h){
+        if(arr[l] == key){
+            return l;
+        }
+        else{
+            return -1;
+        }
+    }
+    else{
+        int mid = (l + h) / 2;
+        if(arr[mid] == key){
+            return mid;
+        }
+        if(arr[mid] > key)
+            return binary_search(arr, l, mid - 1, key);
+        else
+            return binary_search(arr, mid + 1, h, key);
+    }
 }
 
-// 갤럽 서치 (왼쪽 방향)
-int gallop_left(int key, const std::vector<int>& arr, int base, int len) {
-    int last_offset = 0, offset = 1;
-    while (offset < len && arr[base + len - offset] >= key) {
-        last_offset = offset;
-        offset = (offset << 1) + 1;
+// // 갤럽 서치 (오른쪽 방향)
+// int gallop_right(int key, const std::vector<int>& arr, int base, int len) {
+//     int last_offset = 0, offset = 1;
+//     while (offset < len && arr[base + offset] <= key) {
+//         last_offset = offset;
+//         offset = (offset << 1) + 1;
+//     }
+//     int upper = std::min(base + offset, base + len);
+//     auto pos = std::upper_bound(arr.begin() + base + last_offset,
+//                                arr.begin() + upper, key); // Need to impl as bin search.
+//     // int pos = binary_search(arr, base + last_offset, upper, key);
+
+//     // return pos - base;
+//     return pos - (arr.begin() + base);
+// }
+
+// // 갤럽 서치 (왼쪽 방향)
+// int gallop_left(int key, const std::vector<int>& arr, int base, int len) {
+//     int last_offset = 0, offset = 1;
+//     while (offset < len && arr[base + len - offset] >= key) {
+//         last_offset = offset;
+//         offset = (offset << 1) + 1;
+//     }
+//     int lower = std::max(base, base + len - offset);
+//     auto pos = std::lower_bound(arr.begin() + lower,
+//                                arr.begin() + base + len - last_offset, key); // Need to impl as bin search.
+//     // int pos = binary_search(arr, base + lower, base + len - last_offset, key);
+//     // return pos - base;
+//     return pos - (arr.begin() + base);
+// }
+
+int gallop_right(int key, const std::vector<int>& arr, int start, int length) {
+    int low = start;
+    int high = start + length;
+    while (low < high) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] <= key) {
+            low = mid + 1;
+        } else {
+            high = mid;
+        }
     }
-    int lower = std::max(base, base + len - offset);
-    auto pos = std::lower_bound(arr.begin() + lower,
-                               arr.begin() + base + len - last_offset, key); // Need to impl as bin search.
-    return pos - (arr.begin() + base);
+    return low;
+}
+
+int gallop_left(int key, const std::vector<int>& arr, int start, int length) {
+    int low = start;
+    int high = start + length;
+    while (low < high) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] < key) {
+            low = mid + 1;
+        } else {
+            high = mid;
+        }
+    }
+    return low;
 }
 
 void insertion_sort(std::vector<int>& arr, int l, int r) { // bin insertion sort 적용시키기
@@ -108,14 +165,12 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
         if(arr[m + 1] > left[0]){ // 넘기다 un-necessary part of front.
             std::cout << "right big\n";
             i = gallop_right(arr[m + 1], left, 0, len1);
-            k++;
         }
         else{
             std::cout << "left big\n";
             j = gallop_right(left[0], arr, m + 1, len2);
-            int tmp = j;
-            for (int a = 0; a < tmp; ++a) { // 넣을 때도 gallop 적용 필요.
-                arr[k++] = arr[m + 1 + j]; j++;
+            for (int a = 0; a < j; a++) { // 넣을 때도 gallop 적용 필요.
+                arr[k++] = arr[m + 1 + a];
             }
         }
 
@@ -123,11 +178,13 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
 
         if(arr[r] > left[len1 - 1]){ // 넘기다 un-necessary part of front.
             std::cout << "right big\n";
-            len1 = gallop_left(arr[r], left, 0, len1);
+            len2 = gallop_left(left[len1 - 1], arr, m + 1 + j, len2) + j;
         }
         else{
             std::cout << "left big\n";
-            len2 = gallop_left(left[len1 - 1], arr, m + 1, len2) - (m + 1);
+            original = len1;
+            len1 = gallop_left(arr[r], left, i, len1) + i;
+
         }
 
         std::cout << "len1: " << len1 << " len2: " << len2 << "\n";
@@ -143,7 +200,7 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
 
                 if (i >= len1) break;
 
-                gallop_count = gallop_right(left[i], arr, m + 1 + j, r - j);
+                gallop_count = gallop_right(left[i], arr, m + 1 + j, len2 - j);
                 for (int b = 0; b < gallop_count; ++b) {
                     arr[k++] = arr[m + 1 + j]; j++;
                 }
@@ -163,10 +220,10 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
                 ++right_wins;
                 left_wins = 0;
             }
-
+            // return;
         }
 
-        while (i < len1) arr[k++] = left[i++];
+        while (len1 < original) arr[k++] = left[len1++];
         // while (j < len2) arr[k++] = right[j++];
     }
     else{ // Input bigger one first to use one array(in-place) method.-------------------------------------------------------------------------------->
@@ -179,10 +236,17 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
 
         std::cout << "right[0]: " << right[0] << " arr[l]: " << arr[l] << "\n";
         if(right[0] >= arr[l]){ // pass consideration of sorting un-necessary part of front.
+            // Case 1. Right arr first is bigger than left arr first. > do not merge some of left part.
+            std::cout << "1\n";
             left_limit = gallop_right(right[0], arr, l, len1);
+            std::cout << "left_limit: " << left_limit << std::endl << std::endl;
             len1 -= left_limit;
         }
         else{
+            // Case 2. Left arr first is bigger than right part arr first. > do not merge some of right part.
+            // Need to deal it last part.
+            std::cout << "2\n";
+            original = len2;
             right_limit = gallop_right(arr[l], right, 0, len2);
             len2 -= right_limit;
         }
@@ -191,31 +255,39 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
         std::cout << "right[len2 - 1]: " << right[len2 - 1] << " arr[m]: " << arr[m] << "\n";
 
         if(right[len2 - 1] > arr[m]){ // pass consideration of sorting un-necessary part of back.
+            // Case 3. Right arr final is bigger than left arr final. > stay right part.
             //original = len1;
-            len2 = gallop_left(right[len2 - 1], arr, l, len1) - l;
-            k = m + len2;
+            std::cout << "3\n";
+            j = len2 - gallop_left(arr[m], right, right_limit, len2);
+            k -= j;
         }
         else{
-            original = len1;
-            len1 = gallop_left(arr[m], right, 0, len2);
-            for(size_t tmp = original - 1; tmp >= len1; tmp++){
+            // Case 4. Left arr final is bigger than right arr final. > copy left part one into right part.
+            std::cout << "4\n";
+            size_t tmp_pos = gallop_left(right[len2 - 1], arr, l + left_limit, len1) + left_limit;
+            std::cout << len1 << " <- len1 m: " << m << " tmp_pos: " << tmp_pos << "\n";
+            for(size_t tmp = 0; tmp < tmp_pos; tmp--){
+                std::cout << tmp << " ";
                 arr[k--] = arr[l + tmp];
+                i++;
             }
+            std::cout << "\n";
         }
 
+        // return;
         std::cout << "len1: " << len1 << " len2: " << len2 << "\n";
         size_t cnt = 0;
         size_t trial = 1;
-        while (i < len1 && j < (len2 - right_limit)) {
+        while (i < len1 && j < len2) {
             std::cout << "\n\nwhile_loop " << trial++ <<"th\n\narray:\n";
-            for(size_t tmp = l; tmp < r; tmp++){
+            for(size_t tmp = l; tmp <= r; tmp++){
                 std::cout << arr[tmp] << " ";
                 // cnt++;
                 if((tmp - l + 1) % 12 == 0){
                     std::cout << "\n";
                 }
             }
-            std::cout << "\nleft on right: \n";
+            std::cout << "\nleft number on right: \n";
             for(size_t tmp = right_limit; tmp < len2 - j; tmp++){
                 std::cout << right[tmp] << " ";
                 if((tmp - right_limit + 1) % 12 == 0){
@@ -229,10 +301,10 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
                 std::cout << "\ngallop" << std::endl;
                 // if input qty on arr element either left or right array is bigger than gallop, go to gallop mode.
                 std::cout << "right[len2 - j - 1]: " << right[len2 - j - 1] << " \n";
-                int gallop_count = gallop_right(right[len2 - j - 1], arr, l + left_limit, len1 - i) - l; // Gallop 수정 필요.
+                int gallop_count = (len1 - i) - gallop_left(right[len2 - j - 1], arr, l + left_limit, len1 - i) + 1; // Gallop 수정 필요.
                 std::cout << "left count: " << gallop_count << "len1 - i: " << len1 - i << std::endl;
-                size_t start_pos = len1 - i - 1;
-                for (int a = start_pos; a > gallop_count; a--) { // 넣을 때도 gallop 적용 필요.
+                // size_t start_pos = len1 - i - 1;
+                for (int a = 0; a < gallop_count; a++) { // 넣을 때도 gallop 적용 필요.
                     arr[k--] = arr[m - i]; i++;
                 }
                 left_wins = 0;
@@ -245,9 +317,9 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
             }
 
             if(right_wins >= min_gallop){
-                int gallop_count = gallop_right(arr[m - i], right, right_limit, len2 - j);
+                int gallop_count = (len2 - j) - gallop_left(arr[m - i], right, right_limit, len2 - j) + 1;
                 std::cout << "right gallop count: " << gallop_count << std::endl;
-                for (int b = len2 - j - 1; b > gallop_count; b--) {
+                for (int b = 0; b < gallop_count; b++) {
                     arr[k--] = right[len2 - j - 1]; j++;
                 }
                 right_wins = 0;
@@ -260,30 +332,23 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
 
             if (arr[m - i] >= right[len2 - j - 1]) {
                 std::cout << "left\n";
-                arr[k--] = arr[m - i]; i++;
+                arr[k--] = arr[m - i];
+                i++;
                 ++left_wins;
                 right_wins = 0;
             } else {
                 std::cout << "right\n";
-                arr[k--] = right[len2 - j - 1]; j++;
+                arr[k--] = right[len2 - j - 1];
+                j++;
                 ++right_wins;
                 left_wins = 0;
             }
+            // return;
         }
         std::cout << "END\n";
-        //while (i < len1) arr[k++] = left[i++];
-        // while (right_limit >= 0){
-        //     // std::cout << "right limit: " << right_limit << "j: " << j << " k: " << k << " original - j - 1: " << original - j - 1 << "\n";
-        //     arr.at(k--) = right.at(right_limit);
-        //     right_limit--;
-        // }
-        for(int tmp = len2 - j - 1 ; tmp >= right_limit; tmp--){
-            std::cout << tmp << std::endl;
-            arr[k--] = right[tmp];
-            // std::cout << right[tmp] << " ";
-            // if((tmp - right_limit + 1) % 12 == 0){
-            //     std::cout << "\n";
-            // }
+        while(original > len2){
+            std::cout << len2 << std::endl;
+            arr[k--] = right[len2++];
         }
         std::cout << "REAL END\n";
     }

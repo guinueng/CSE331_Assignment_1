@@ -25,22 +25,22 @@ int calc_min_run(int n) {
 // 자연스러운 런 탐지 및 역전
 void find_and_reverse_run(std::vector<int>& arr, int& start, int& end) {
     bool increasing = true;
-    if (start >= arr.size() - 1) return;
+    if (start >= (int)arr.size() - 1) return;
 
     // 증가/감소 방향 탐지
     int i = start;
-    while (i < arr.size() - 1 && arr[i] == arr[i+1]) i++;
-    if (i < arr.size() - 1) increasing = (arr[i] < arr[i+1]);
+    while (i < (int)arr.size() - 1 && arr[i] == arr[i+1]) i++;
+    if (i < (int)arr.size() - 1) increasing = (arr[i] < arr[i+1]);
 
     // 런 끝까지 탐색
     end = start;
     while (true) {
         if (increasing) {
-            while (end < arr.size()-1 && arr[end] <= arr[end+1]) end++;
+            while (end < (int)arr.size()-1 && arr[end] <= arr[end+1]) end++;
         } else {
-            while (end < arr.size()-1 && arr[end] >= arr[end+1]) end++;
+            while (end < (int)arr.size()-1 && arr[end] >= arr[end+1]) end++;
         }
-        if (++end >= arr.size()) break;
+        if (++end >= (int)arr.size()) break;
         if (increasing != (arr[end-1] < arr[end])) break;
     }
 
@@ -55,6 +55,9 @@ int gallop_right(int key, const std::vector<int>& arr, int start, int length) {
     int high = start + length;
     while (low < high) {
         int mid = low + (high - low) / 2;
+        if(mid >= (int)arr.size()){
+            return (int)arr.size();
+        }
         if (arr[mid] <= key) {
             low = mid + 1;
         } else {
@@ -69,7 +72,10 @@ int gallop_left(int key, const std::vector<int>& arr, int start, int length) {
     int high = start + length;
     while (low < high) {
         int mid = low + (high - low) / 2;
-        if (arr[mid] < key) {
+        if(mid >= (int)arr.size()){
+            return (int)arr.size() - 1;
+        }
+        if (arr.at(mid) < key) {
             low = mid + 1;
         } else {
             high = mid;
@@ -78,69 +84,55 @@ int gallop_left(int key, const std::vector<int>& arr, int start, int length) {
     return low;
 }
 
-void insertion_sort(std::vector<int>& arr, int l, int r) { // bin insertion sort 적용시키기
-    for (int i = l + 1; i <= r; i++) {
-        int key = arr[i];
+// void insertion_sort(std::vector<int>& arr, int l, int r) { // bin insertion sort 적용시키기
+//     for (int i = l + 1; i <= r; i++) {
+//         int key = arr[i];
 
-        int j = i - 1;
-        while (j >= l && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = key;
-    }
-}
-
-// for(size_t j = 2; j < numbers.size(); j++){
-//     int key = numbers[j];
-
-//     size_t i = j - 1;
-//     while(i > 0 && numbers[i] > key){
-//         numbers[i + 1] = numbers[i];
-//         i--;
+//         int j = i - 1;
+//         while (j >= l && arr[j] > key) {
+//             arr[j + 1] = arr[j];
+//             j--;
+//         }
+//         arr[j + 1] = key;
 //     }
-
-//     numbers[i + 1] = key;
 // }
 
 // Binary search to find the correct position for the key
-// int binary_search(const std::vector<int>& arr, int l, int r, int key) {
-//     int left = l;
-//     int right = r;
+int binary_search(const std::vector<int>& arr, int l, int r, int key) {
+    int left = l;
+    int right = r;
 
-//     while (left <= right) {
-//         int mid = left + (right - left) / 2;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
 
-//         if (arr[mid] == key) {
-//             return mid; // Exact match (rare in sorting)
-//         } else if (arr[mid] < key) {
-//             left = mid + 1; // Search in the right half
-//         } else {
-//             right = mid - 1; // Search in the left half
-//         }
-//     }
+        if (arr[mid] == key) {
+            return mid; // Exact match (rare in sorting)
+        } else if (arr[mid] < key) {
+            left = mid + 1; // Search in the right half
+        } else {
+            right = mid - 1; // Search in the left half
+        }
+    }
 
-//     return left; // Return the position where `key` should be inserted
-// }
+    return left; // Return the position where `key` should be inserted
+}
 
-// // Binary insertion sort algorithm
-// void insertion_sort(std::vector<int>& arr, int l, int r) {
-//     std::cout << "insert\n";
-//     for (int i = l + 1; i <= r; ++i) {
-//         int key = arr[i];
-//         // Find the position to insert the key using binary search
-//         int pos = binary_search(arr, l, i - 1, key);
+// Binary insertion sort algorithm
+void insertion_sort(std::vector<int>& arr, int l, int r) {
+    for (int i = l + 1; i <= r; ++i) {
+        int key = arr[i];
+        // Find the position to insert the key using binary search
+        int pos = binary_search(arr, l, i - 1, key);
 
-//         // Shift elements to make space for the key
-//         for (int j = i - 1; j >= pos; --j) {
-//             arr[j + 1] = arr[j];
-//         }
+        // Shift elements to make space for the key
+        for (int j = i - 1; j >= pos; --j) {
+            arr[j + 1] = arr[j];
+        }
 
-//         // Insert the key at the correct position
-//         arr[pos] = key;
-//     }
-// }
-
+        // Insert the key at the correct position
+        arr[pos] = key;
+    }
+}
 
 void merge(std::vector<int>& arr, int l, int m, int r) {
     int len1 = m - l + 1;
@@ -159,14 +151,12 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
 
         if(arr[m + 1] > left[0]){ // 넘기다 un-necessary part of front.
             // Case 1. arr[m + 1] > left[0]
-            left_limit = gallop_right(arr[m + 1], left, 0, len1);
-            i = left_limit;
+            i = gallop_right(arr[m + 1], left, 0, len1);
             k += i;
         }
         else{
             // Case 2. arr[m + 1] <= left[0]
-            right_limit = gallop_right(left[0], arr, m + 1, len2) - (m + 1);
-            j = right_limit;
+            j = gallop_right(left[0], arr, m + 1, len2) - (m + 1);
             for (int a = 0; a < j; a++) { // 넣을 때도 gallop 적용 필요.
                 arr[k++] = arr[m + 1 + a];
             }
@@ -182,7 +172,6 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
             len1 = gallop_left(arr[r], left, i, len1);
         }
 
-        size_t trial = 1;
         while (i < len1 && j < len2) {
             if (left_wins >= min_gallop) {
                 // if input qty on arr element either left or right array is bigger than gallop, go to gallop mode.
@@ -233,7 +222,7 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
         while (original > i)
             arr[k++] = left[i++];
     }
-    else{ // Input bigger one first to use one array(in-place) method.-------------------------------------------------------------------------------->
+    else{ // Input bigger one first to use one array(in-place) method.
         std::vector<int> right(len2);
         std::copy(arr.begin() + m + 1, arr.begin() + r + 1, right.begin());
         k = r;
@@ -253,21 +242,17 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
 
         if(right[original - 1] >= arr[m]){ // pass consideration of sorting un-necessary part of back.
             // Case 3. Right arr final is bigger than left arr final. > stay right part.
-            int tmp = (gallop_left(arr[m], right, right_limit, len2));
             j = (len2 + right_limit) - (gallop_left(arr[m], right, right_limit, len2));
             k -= j;
         }
         else{
             // Case 4. Left arr final is bigger than right arr final. > copy left part one into right part.
-            int tmp = (gallop_left(right[original - 1], arr, l + left_limit, len1) - l);
             i = (len1 + left_limit) - (gallop_left(right[original - 1], arr, l + left_limit, len1) - l);
-            for(size_t tmp = 0; tmp < i; tmp++){
+            for(int tmp = 0; tmp < i; tmp++){
                 arr[k--] = arr[m - tmp];
             }
         }
 
-        size_t cnt = 0;
-        size_t trial = 1;
         while (i < len1 && j < len2) {
             if (left_wins >= min_gallop) {
                 // if input qty on arr element either left or right array is bigger than gallop, go to gallop mode.
@@ -328,12 +313,10 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
 }
 
 void tim_sort(std::vector<int>& arr) {
-    if (arr.size() <= 1) return;
+    if ((int)arr.size() <= 1) return;
 
-    const int n = arr.size();
+    const int n = (int)arr.size();
     const int min_run = calc_min_run(n);
-    // const int min_run = 64;
-    // std::vector<std::pair<int, int>> runs;
     std::stack<std::pair<int, int>> runs;
     int current = 0;
 

@@ -304,27 +304,24 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
             len2 -= right_limit;
         }
 
-        std::cout << "i: " << i << " j: " << j << " m + j + 1: " << m + j + 1 << "\n";
-        std::cout << "right[len2 - 1]: " << right[len2 - 1] << " arr[m]: " << arr[m] << "\n";
-
-        if(right[len2 - 1] > arr[m]){ // pass consideration of sorting un-necessary part of back.
+        if(right[len2 - 1] >= arr[m]){ // pass consideration of sorting un-necessary part of back.
             // Case 3. Right arr final is bigger than left arr final. > stay right part.
             std::cout << "3\n";
             j = (len2 + right_limit) - gallop_left(arr[m], right, right_limit, len2);
             k -= j;
         }
-        else{
-            // Case 4. Left arr final is bigger than right arr final. > copy left part one into right part.
-            std::cout << "Case 4.\n";
-            size_t tmp_pos = gallop_left(right[len2 - 1], arr, l + left_limit, len1) - l;
-            std::cout << len1 << " <- len1 m: " << m << " tmp_pos: " << tmp_pos << "\n";
-            for(size_t tmp = tmp_pos; tmp < (len1 + left_limit); tmp++){
-                std::cout << tmp << " ";
-                arr[k--] = arr[m - i];
-                i++;
-            }
-            std::cout << "\n";
-        }
+        // else{
+        //     // Case 4. Left arr final is bigger than right arr final. > copy left part one into right part.
+        //     std::cout << "Case 4.\n";
+        //     size_t tmp_pos = gallop_left(right[len2 - 1], arr, l + left_limit, len1) - l;
+        //     std::cout << len1 << " <- len1 m: " << m << " tmp_pos: " << tmp_pos << "\n";
+        //     for(size_t tmp = tmp_pos; tmp < (len1 + left_limit); tmp++){
+        //         std::cout << tmp << " ";
+        //         arr[k--] = arr[m - i];
+        //         i++;
+        //     }
+        //     std::cout << "\n";
+        // }
 
         std::cout << "len1: " << len1 << " len2: " << len2 << "\n";
         std::cout << "i: " << i << " j: " << j << "\n";
@@ -336,22 +333,22 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
             for(size_t tmp = l; tmp <= r; tmp++){
                 std::cout << arr[tmp] << " ";
                 // cnt++;
+                if(tmp == m){
+                    std::cout << "\n\n";
+                }
                 if((tmp - l + 1) % 12 == 0){
                     std::cout << "\n";
                 }
             }
             std::cout << "\nleft number on right: \n";
-            for(size_t tmp = right_limit; tmp < original - j - 1; tmp++){
+            for(size_t tmp = right_limit; tmp < original - j; tmp++){
                 std::cout << right[tmp] << " ";
                 if((tmp - right_limit + 1) % 12 == 0){
                     std::cout << "\n";
                 }
             }
-            std::cout << "\ni: " << i << " j: " << j << " m + j + 1: " << m + j + 1 << "\n";
-            std::cout << "len1: " << len1 << " len2: " << len2 << " original: " << original <<"\n";
-            std::cout << "left wins: " << left_wins << " right wins: " << right_wins << "\n";
-            std::cout << "left limit: " << left_limit << " right limit: " << right_limit;
-
+            std::cout << "\ni: " << i << " j: " << j << "\n";
+            std::cout << "len1: " << len1 << " len2: " << len2 << "\n";
             // if (left_wins >= min_gallop) {
             //     std::cout << "\ngallop" << std::endl;
             //     // if input qty on arr element either left or right array is bigger than gallop, go to gallop mode.
@@ -385,13 +382,11 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
             // }
 
             if (arr[m - i] >= right[original - j - 1]) {
-                std::cout << "left\n";
                 arr[k--] = arr[m - i];
                 i++;
                 ++left_wins;
                 right_wins = 0;
             } else {
-                std::cout << "right\n";
                 arr[k--] = right[original - j - 1];
                 j++;
                 ++right_wins;
@@ -399,13 +394,27 @@ void merge(std::vector<int>& arr, int l, int m, int r) {
             }
         }
         std::cout << "END\noriginal: " << original << " j: " << j << "\n";
-
+        while(len1 > i){
+            arr[k--] = arr[m - i];
+            i++;
+        }
         while(original > j){
             std::cout << original << "calc: " << original - j - 1 << std::endl;
             arr[k--] = right.at(original - j - 1);
             j++;
         }
         std::cout << "REAL END\n";
+        for(size_t tmp = l; tmp <= r; tmp++){
+            std::cout << arr[tmp] << " ";
+            // cnt++;
+            if(tmp == m){
+                std::cout << "\n\n";
+            }
+            if((tmp - l + 1) % 12 == 0){
+                std::cout << "\n";
+            }
+        }
+        std::cout << "sorted\n";
     }
 }
 

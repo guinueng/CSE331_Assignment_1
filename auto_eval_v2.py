@@ -6,7 +6,7 @@ from pathlib import Path
 
 def realtime_output(proc, output_file):
     """실시간 출력을 처리하는 쓰레드 함수"""
-    with open(output_file, 'w') as f:
+    with open(output_file, 'a') as f:
         while True:
             line = proc.stdout.readline()
             if not line:

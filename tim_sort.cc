@@ -8,7 +8,6 @@
 #include <bits/stdc++.h>
 #include <algorithm>
 #include <stack>
-#include <cassert>
 
 const int MIN_GALLOP = 7;
 
@@ -22,31 +21,27 @@ int calc_min_run(int n) {
     return n + r;
 }
 
-// 자연스러운 런 탐지 및 역전
+// Improved run detection
 void find_and_reverse_run(std::vector<int>& arr, int& start, int& end) {
-    bool increasing = true;
     if (start >= (int)arr.size() - 1) return;
 
-    // 증가/감소 방향 탐지
+    bool increasing = true;
     int i = start;
-    while (i < (int)arr.size() - 1 && arr[i] == arr[i+1]) i++;
-    if (i < (int)arr.size() - 1) increasing = (arr[i] < arr[i+1]);
 
-    // 런 끝까지 탐색
+    // Detect direction
+    while (i < (int)arr.size() - 1 && arr[i] == arr[i + 1]) i++;
+    if (i < (int)arr.size() - 1) increasing = (arr[i] < arr[i + 1]);
+
+    // Find run end
     end = start;
-    while (true) {
-        if (increasing) {
-            while (end < (int)arr.size()-1 && arr[end] <= arr[end+1]) end++;
-        } else {
-            while (end < (int)arr.size()-1 && arr[end] >= arr[end+1]) end++;
-        }
-        if (++end >= (int)arr.size()) break;
-        if (increasing != (arr[end-1] < arr[end])) break;
+    while (end < (int)arr.size() - 1 &&
+           ((increasing && arr[end] <= arr[end + 1]) || (!increasing && arr[end] >= arr[end + 1]))) {
+        end++;
     }
 
-    // 감소 런 역전
+    // Reverse decreasing run
     if (!increasing) {
-        std::reverse(arr.begin() + start, arr.begin() + end);
+        std::reverse(arr.begin() + start, arr.begin() + end + 1);
     }
 }
 

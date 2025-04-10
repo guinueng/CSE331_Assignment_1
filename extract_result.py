@@ -3,11 +3,11 @@ import re
 import csv
 
 # 설정: 특정 단어와 경로
-filename_keyword = "1k"  # 파일 이름에 포함된 특정 단어
-content_keyword = "Sorting time: "  # 파일 내용에서 찾고자 하는 특정 단어
-# content_keyword = "Maximum resident set size (kbytes): "  # 파일 내용에서 찾고자 하는 특정 단어
+filename_keyword = "1m"  # 파일 이름에 포함된 특정 단어
+# content_keyword = "Sorting time: "  # 파일 내용에서 찾고자 하는 특정 단어
+content_keyword = "Maximum resident set size (kbytes): "  # 파일 내용에서 찾고자 하는 특정 단어
 input_folder = "./"  # txt 파일이 있는 폴더 경로
-output_csv = "basic_1k_time.csv"  # 결과를 저장할 CSV 파일 이름
+output_csv = "quick_1m_mem.csv"  # 결과를 저장할 CSV 파일 이름
 
 # 모든 숫자를 저장할 딕셔너리 (파일별로 열 생성)
 data = {}

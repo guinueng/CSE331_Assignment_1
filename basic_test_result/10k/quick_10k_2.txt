@@ -1,0 +1,155 @@
+Results from ./quick_sort w/ input file: /10k/unsorted_10k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 3 ms
+Sorting time: 0 ms
+
+Sorted!
+	Command being timed: "./quick_sort ./test_case//10k/unsorted_10k.txt ./test_case//10k/10k_output.txt"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7196
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1625
+	Voluntary context switches: 3
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 216
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./quick_sort w/ input file: /10k/unsorted_10k.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: /10k/sorted_10k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 106 ms
+Sorting time: 103 ms
+
+Sorted!
+	Command being timed: "./quick_sort ./test_case//10k/sorted_10k.txt ./test_case//10k/10k_output.txt"
+	User time (seconds): 0.11
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7244
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1642
+	Voluntary context switches: 6
+	Involuntary context switches: 1
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 216
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./quick_sort w/ input file: /10k/sorted_10k.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: /10k/partially_sorted_10k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 82 ms
+Sorting time: 79 ms
+
+Sorted!
+	Command being timed: "./quick_sort ./test_case//10k/partially_sorted_10k.txt ./test_case//10k/partially_10k_output.txt"
+	User time (seconds): 0.07
+	System time (seconds): 0.00
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7436
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1662
+	Voluntary context switches: 2
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 216
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./quick_sort w/ input file: /10k/partially_sorted_10k.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: /10k/dup_10k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 103 ms
+Sorting time: 100 ms
+
+Sorted!
+	Command being timed: "./quick_sort ./test_case//10k/dup_10k.txt ./test_case//10k/dup_10k_output.txt"
+	User time (seconds): 0.10
+	System time (seconds): 0.00
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7428
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1182
+	Voluntary context switches: 3
+	Involuntary context switches: 1
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 40
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./quick_sort w/ input file: /10k/dup_10k.txt is Valid.
+------------------------------------
+Results from ./quick_sort w/ input file: /10k/descend_10k.txt:
+Processed data has been written to 'output.txt'.
+Elapsed time: 65 ms
+Sorting time: 63 ms
+
+Sorted!
+	Command being timed: "./quick_sort ./test_case//10k/descend_10k.txt ./test_case//10k/descend_10k_output.txt"
+	User time (seconds): 0.06
+	System time (seconds): 0.01
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7308
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1245
+	Voluntary context switches: 3
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 216
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Results from ./quick_sort w/ input file: /10k/descend_10k.txt is Valid.
+------------------------------------

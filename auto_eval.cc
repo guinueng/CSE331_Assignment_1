@@ -64,20 +64,20 @@ void runProgram(const std::string& program, const std::string& input_arg, const 
 int main() {
     // List of programs and their arguments
     std::vector<std::string> progs = {
-        "./merge_sort",
-        "./heap_sort",
-        "./bubble_sort",
-        "./insertion_sort",
-        "./selection_sort",
+        // "./merge_sort",
+        // "./heap_sort",
+        // "./bubble_sort",
+        // "./insertion_sort",
+        // "./selection_sort",
         "./quick_sort"
     };
-
+ 
     std::vector<std::pair<std::string, std::string>> args = {
-        {"unsorted_1k.txt", "1k_output.txt"},
-        {"sorted_1k.txt", "1k_output.txt"},
-        {"partially_sorted_1k.txt", "partially_1k_output.txt"},
-        {"dup_1k.txt", "dup_1k_output.txt"},
-        {"descend_1k.txt", "descend_1k_output.txt"}
+        // {"/1m/unsorted_1m.txt", "/1m/1m_output.txt"},
+        // {"/1m/sorted_1m.txt", "/1m/1m_output.txt"},
+        // {"/1m/partially_sorted_1m.txt", "/1m/partially_1m_output.txt"},
+        {"/1m/dup_1m.txt", "/1m/dup_1m_output.txt"},
+        // {"/1m/descend_1m.txt", "/1m/descend_1m_output.txt"}
     };
 
     // Run each program in sequence

@@ -10,33 +10,54 @@ void swap(std::vector<int>& arr, size_t l_pos, size_t r_pos){
     arr[l_pos] = arr[r_pos];
     arr[r_pos] = tmp;
 }
- 
-int partition(std::vector<int>& arr, int p, int r){
-    int mid = (p + r) / 2;
-    int pivot = arr[mid];
 
-    // 임시로 pivot을 array 끝으로 이동.
-    swap(arr, mid, r);
+void quick_sort(std::vector<int>& arr){
+    size_t back = arr.size() - 1;
 
-    int i = p - 1;
-    for(int j = p; j < r; j++){
-        if(arr[j] <= pivot){
-            i++;
-            swap(arr, i, j);
-        }
+    if(arr.size() < 2){
+        return;
     }
 
-    swap(arr, i + 1, r);
-    return i + 1;
-}
+    // 1. Select pivot at the last point of arr.
+    int pivot = arr[back / 2]; // Pivot can be any value. In assignment document, test it and add it.
 
-void quick_sort(std::vector<int>& arr, int p, int r){
-    if(p >= r)
-        return;
-    
-    int q = partition(arr, p, r);
-    quick_sort(arr, p, q - 1);
-    quick_sort(arr, q + 1, r);
+    // Pivot = back elem > can cause stack overflow. > need to increase stack
+
+    // 2. Move integer into 3 sub-array which is designed to
+    //    store less than / equal / higher than pivot.
+    std::vector<int> S, E, H;
+    while(!arr.empty()){
+        int i = arr[back];
+        if(i < pivot){
+            S.push_back(i);
+        }
+        else if(i > pivot){
+            H.push_back(i);
+        }
+        else{
+            E.push_back(i);
+        }
+        arr.pop_back();
+        back--;
+    }
+
+    // 3. Since arr E is already sorted(due to it is same as
+    //    pivot), so we sort S and H arr.
+    quick_sort(S);
+    quick_sort(H);
+
+    // 4. Finally, combine sorted result into original array.
+    for(auto i: S){
+        arr.push_back(i);
+    }
+
+    for(auto i: E){
+        arr.push_back(i);
+    }
+
+    for(auto i: H){
+        arr.push_back(i);
+    }
 }
 
 int main(int argc, char* argv[]){
@@ -77,7 +98,7 @@ int main(int argc, char* argv[]){
     auto sort_start = std::chrono::high_resolution_clock::now();
 
     // Pursue merge sort.
-    quick_sort(numbers, 0, numbers.size() - 1);
+    quick_sort(numbers);
 
     // End measuring sort_func finish time
     auto sort_end = std::chrono::high_resolution_clock::now();
